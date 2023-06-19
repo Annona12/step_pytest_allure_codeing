@@ -4,47 +4,51 @@
     <action>1101</action>
     <clientID>xIR</clientID>
     <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
-    <sendDateTime>2023-06-16 17:23:36</sendDateTime>
+    <sendDateTime>{{date}}</sendDateTime>
     <fromIPMAC>191.168.0.53,</fromIPMAC>
   </header>
   <body>
     <orders>
       <order>
-        <secuExtAccid>B883056635</secuExtAccid>
-        <orderType>9</orderType>
-        <dir>S</dir>
-        <iCode>010706</iCode>
-        <sysOrdID>1686907416</sysOrdID>
-        <iName>MDe5+tWuMDY=</iName>
-        <exeMarket>XSHG_FIX</exeMarket>
-        <ownerType>103</ownerType>
-        <bOrdCount>0</bOrdCount>
-        <bOrdPrice>0</bOrdPrice>
-        <sOrdCount>120</sOrdCount>
-        <sOrdPrice>102.0</sOrdPrice>
-        <settlType>103</settlType>
-        <settlPeriod />
-        <lastParPx>0</lastParPx>
-        <cashMargin>1</cashMargin>
-        <memo />
-        <ordDate>2023-06-16</ordDate>
-        <ordTime>17:23:36</ordTime>
-        <matchNo>690</matchNo>
+        <ordDate>{{date1}}</ordDate>
+        <ordTime>{{time}}</ordTime>
+        <!--<matchNo>122</matchNo>     约定号-->
         <product>01</product>
         <tradeType>10</tradeType>
         <company>316</company>
-        <trader>Z31608</trader>
+        <trader>Z31605</trader>
         <seatno>88045</seatno>
-        <obTrader>Z31605</obTrader>
+        <!--<obTrader>Z31608</obTrader> 对手方交易员代码-->
         <iceCount>0</iceCount>
-        <clientOrdid>lwy111</clientOrdid>
-        <accname>lwy_shg_B883056635</accname>
+        <clientOrdid>xir20230222</clientOrdid>  <!--XIR界面展示的刻划断报价编号-->
+        <accname>lwy_外证_B883057982</accname>
         <shareProperty>01</shareProperty>
+        <secuExtAccid>B883057982</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>D</dir>
+        <declareType>6</declareType>
+        <iCode>010706</iCode>
+        <iName>MDe5+tWuMDY=</iName>
+        <mtype>XSHG</mtype>
+        <preTradeAnonymity>0</preTradeAnonymity><!--是否匿名报价1-匿名报价，0不匿名报价 -->
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>1000</bOrdCount>
+        <bOrdPrice>101.120</bOrdPrice>
+        <sOrdCount>1000</sOrdCount>
+        <sOrdPrice>102.220</sOrdPrice>
+        <settlType>104</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <orderRestrictions>0</orderRestrictions><!--是否做市报价5，做市报价，0非做市报价-->
+        <localOrdId>1</localOrdId>
+        <memo />
       </order>
     </orders>
     <accountInfo>
       <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
-      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashExtAccName>lwy_外部资金_交易所</cashExtAccName>
       <cashAccID>LWY_NBZJ_JYS</cashAccID>
       <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
       <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
@@ -67,4 +71,4 @@
       <isTerminalinfo>0</isTerminalinfo>
     </terminalInfo>
   </body>
-</root>
+</root> 

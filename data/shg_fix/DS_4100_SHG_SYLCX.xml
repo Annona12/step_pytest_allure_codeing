@@ -1,0 +1,21 @@
+<root>
+	<header>
+		<msgType>R</msgType>
+		<action>4100</action>
+		<clientID>xir</clientID>
+		<reqSn>c65f7af64b7f48f18b89e95a6871878b</reqSn>
+		<sendDateTime>{{date}}</sendDateTime>
+		<fromIPMAC>10.17.242.88,00-50-56-C0-00-08</fromIPMAC>
+		<errorCode>0</errorCode>
+	</header>
+	<body>
+        <req>
+            <iCode>010706</iCode>
+            <price>1</price>
+            <company>316</company>
+            <trader>Z31605</trader>
+            <exeMarket>XSHG_FIX</exeMarket>
+            <clientReqId>lwy0516</clientReqId>
+        </req>
+	</body>
+</root>
