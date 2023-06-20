@@ -4,24 +4,23 @@
     <action>1101</action>
     <clientID>xIR</clientID>
     <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
-    <sendDateTime>{{date}}</sendDateTime>
+    <sendDateTime />
     <fromIPMAC>191.168.0.53,</fromIPMAC>
   </header>
   <body>
     <orders>
       <order>
-        <ordDate>{{date1}}</ordDate>
-        <ordTime>{{time}}</ordTime>
-        <!--<matchNo>122</matchNo>     约定号-->
+        <sysordid />
+        <ordDate />
+        <ordTime />
         <product>01</product>
         <tradeType>10</tradeType>
         <company>316</company>
         <trader>Z31605</trader>
         <seatno>88045</seatno>
-        <!--<obTrader>Z31608</obTrader> 对手方交易员代码-->
         <iceCount>0</iceCount>
-        <clientOrdid>xir20230222</clientOrdid>  <!--XIR界面展示的刻划断报价编号-->
-        <accname>lwy_外证_B883057982</accname>
+        <clientOrdid>xir20230222</clientOrdid>  
+        <accname>lwy_&#22806;&#35777;_B883057982</accname>
         <shareProperty>01</shareProperty>
         <secuExtAccid>B883057982</secuExtAccid>
         <orderType>9</orderType>
@@ -30,7 +29,7 @@
         <iCode>010706</iCode>
         <iName>MDe5+tWuMDY=</iName>
         <mtype>XSHG</mtype>
-        <preTradeAnonymity>0</preTradeAnonymity><!--是否匿名报价1-匿名报价，0不匿名报价 -->
+        <preTradeAnonymity>0</preTradeAnonymity>
         <exeMarket>XSHG_FIX</exeMarket>
         <ownerType>103</ownerType>
         <bOrdCount>1000</bOrdCount>
@@ -41,14 +40,14 @@
         <settlPeriod />
         <lastParPx>0</lastParPx>
         <cashMargin>1</cashMargin>
-        <orderRestrictions>0</orderRestrictions><!--是否做市报价5，做市报价，0非做市报价-->
+        <orderRestrictions>0</orderRestrictions>
         <localOrdId>1</localOrdId>
         <memo />
       </order>
     </orders>
     <accountInfo>
       <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
-      <cashExtAccName>lwy_外部资金_交易所</cashExtAccName>
+      <cashExtAccName>lwy_&#22806;&#37096;&#36164;&#37329;_&#20132;&#26131;&#25152;</cashExtAccName>
       <cashAccID>LWY_NBZJ_JYS</cashAccID>
       <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
       <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
@@ -71,4 +70,4 @@
       <isTerminalinfo>0</isTerminalinfo>
     </terminalInfo>
   </body>
-</root> 
+</root>

@@ -1,0 +1,68 @@
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>db24db043fb144588f5f0467cd419ab7</reqSn>
+    <sendDateTime>2023-06-20 15:54:54</sendDateTime>
+    <fromIPMAC>172.19.6.24,00-50-56-89-E9-34</fromIPMAC>
+    <source>I</source>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>8</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <iName>MDa5+tWuKDkp</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0.000</bOrdPrice>
+        <sOrdCount>1000</sOrdCount>
+        <sOrdPrice>102.004</sOrdPrice>
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <matchNo>127</matchNo>
+        <ordDate>2023-06-20</ordDate>
+        <ordTime>15:54:54</ordTime>
+        <product>06</product>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obSecuExtAccid>00000001553</obSecuExtAccid>
+        <iceCount>0</iceCount>
+        <clientOrdid>916610</clientOrdid>
+        <accname>jyscs_wbzq_sjs</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress>172.20.14.104</clientInnerIpAddress>
+      <clientMacaddress>F4EE08E2503A^1CC10CB5631E^1CC10CB5631F^1EC10CB5631E^1CC10CB56322^00FF6D8F5320</clientMacaddress>
+      <clientHarddiskno>1_5277_5307_0025_3845_0000_0001.</clientHarddiskno>
+      <clientPcname>HT-LPC-1235</clientPcname>
+      <clientCpuno>BFEBFBFF000806C1</clientCpuno>
+      <clientDiskpartitioninfo>C^NTFS^238G</clientDiskpartitioninfo>
+      <clientReellabel>8E0C-9262</clientReellabel>
+      <clientName>xIRCS</clientName>
+      <clientVersion>1.3.0.085</clientVersion>
+      <isTerminalinfo>1</isTerminalinfo>
+    </terminalInfo>
+        <accountInfo>
+           
+      <cashExtAccID>zll_wbzj_jys</cashExtAccID>
+      <cashExtAccName>zll_&#22806;&#37096;&#36164;&#37329;_&#20132;&#26131;&#25152;</cashExtAccName>
+      <cashAccID>lcj_test_jyscw</cashAccID>
+      <cashAccIDAccName>lcj_test_&#20132;&#26131;&#25152;&#22330;&#22806;</cashAccIDAccName>
+            
+      <xirSecuExtAccID>zll_wbzq_sjs</xirSecuExtAccID>
+      <xirSecuExtAccName>zll_&#22806;&#35777;_&#19978;&#20132;&#25152;_B883056635</xirSecuExtAccName>
+      <secuAccID>lcj_test_jyscw</secuAccID>
+      <secuAccName>lcj_test_&#20132;&#26131;&#25152;&#22330;&#22806;</secuAccName>
+    </accountInfo>
+  </body>
+</root>

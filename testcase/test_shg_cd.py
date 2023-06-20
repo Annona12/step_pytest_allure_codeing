@@ -5,14 +5,14 @@ import time
 import allure
 import pytest
 
-from Test.step_allure_auto.data_driver.deal_xml import set_xml, set_xml_string
+from data_driver.deal_xml import set_xml, set_xml_string
 
 
 def setup_module(module):
     global shg_xscj_path, shg_cd_path
     shg_xscj_path = 'data/DS_1102_SHG_CD.xml'
 
-# @pytest.mark.smoke()
+@pytest.mark.smoke()
 @allure.feature('上交所协商成交')
 @allure.title('上交所固定收益平台撤单申报')
 @allure.story('正向测试用例')

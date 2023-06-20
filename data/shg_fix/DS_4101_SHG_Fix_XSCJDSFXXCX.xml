@@ -1,0 +1,21 @@
+<root>
+	<header>
+		<msgType>R</msgType>
+		<action>4101</action>
+		<clientID>xir</clientID>
+		<reqSn>c65f7af64b7f48f18b89e95a6871878b</reqSn>
+		<sendDateTime>2023-06-20 15:54:53</sendDateTime>
+		<fromIPMAC>10.17.242.88,00-50-56-C0-00-08</fromIPMAC>
+		<errorCode>0</errorCode>
+	</header>
+	<body>
+        <req>
+            <confirmId>113</confirmId>
+            <company>316</company>
+            <trader>Z31606</trader>
+            <cpTrader>Z08505</cpTrader>
+            <exeMarket>XSHG_FIX</exeMarket>
+            <clientReqId>lwy_20230619001</clientReqId>
+        </req>
+	</body>
+</root>
