@@ -11,7 +11,7 @@ from data_driver.deal_excel import read_excel
 from data_driver.deal_xml import set_xml, set_xml_string
 from tools.tools import Tools
 
-
+# set_module在当前文件中，在所有测试用例执行之前执行
 def setup_module(module):
     # 定义全局变量，当前文件的函数都可以访问
     global tools, all_val
@@ -22,7 +22,8 @@ def setup_module(module):
 
 
 @pytest.mark.parametrize('data', read_excel('data/step_case.xlsx'))
-def test_shg_fix_xscj(data):
+def test_shg_fix(data):
+
     # 动态生成测试用例的feature、story、title、description、severity
     if data[1] is not None:
         allure.dynamic.feature(data[1])
@@ -36,18 +37,20 @@ def test_shg_fix_xscj(data):
         allure.dynamic.severity(data[5])
     # 获取当前行数
     row_num = data[0] + 1
-
-    # 将从excel中读取的数据放入参数中
-    # 获取功能号单元格的数据数据
-    action_str = str(data[6])
-    # 获取需要读取的xml文件数据
-    xml_str = data[7]
-    # 获取需要重新设置的参数数据
-    param_str = data[8]
-    # 各个数据分别使用“;”分开，获取list
-    act_list = action_str.split(';')
-    xml_list = xml_str.split(';')
-    param_list = param_str.split(';')
+    try:
+        # 将从excel中读取的数据放入参数中
+        # 获取功能号单元格的数据数据
+        action_str = str(data[6])
+        # 获取需要读取的xml文件数据
+        xml_str = data[7]
+        # 获取需要重新设置的参数数据
+        param_str = data[8]
+        # 各个数据分别使用“;”分开，获取list
+        act_list = action_str.split(';')
+        xml_list = xml_str.split(';')
+        param_list = param_str.split(';')
+    except :
+        print('接口请求格式有误，请检查action、报文路径、参数')
     # 对于每一行action有多个数据时，循环发送请求
     for i in range(len(act_list)):
         # 获取当前系统的时间
@@ -77,9 +80,7 @@ def test_shg_fix_xscj(data):
         data_xml = set_xml_string(xml_list[i])
         # 发送请求
         result = tools.send_post(act_list[i], data_xml)
-        print(data_xml)
-        print(result)
-        time.sleep(2)
+        time.sleep(3)
 
     if data[9] is not None and data[10] is not None and data[11] is not None:
         # 查询数据库的基础sql
@@ -98,19 +99,19 @@ def test_shg_fix_xscj(data):
             for j in range(length):
                 param_list_num.append(eval(sql_param_list[j]))
             sql = sql_str_list[i].format(*param_list_num)
-            print(sql)
             hope_result = data[11]
-            hope_result_dic = eval(hope_result)
-            result_list = tools.oracle_link(sql)
-            with allure.step('1、数据库状态断言：'):
-                with allure.step(f'预期结果：ord_status={hope_result_dic["ordstatus"]}'):
-                    ord_status = result_list[0][0]
-                with allure.step(f'实际结果：ord_status={ord_status}'):
-                    assert ord_status == hope_result_dic["ordstatus"]
-            with allure.step('2、数据库错误信息断言：'):
-                with allure.step(f'预期结果：ord_status={hope_result_dic["errinfo"]}'):
-                    ord_errinfo = result_list[0][1]
-                with allure.step(f'实际结果：ord_status={ord_errinfo}'):
-                    assert ord_errinfo == hope_result_dic["errinfo"]
-            # print(result_list)
-            # print(data[11])
+            hope_result_list = hope_result.split(';')
+            hope_result_dic_list =  []
+            for item in hope_result_list:
+                temp_item = eval(item)
+                hope_result_dic_list.append(temp_item)
+                try:
+                    result_list = tools.oracle_link(sql)
+                except :
+                    print('sql语句有误，请检查！！！')
+            for key in hope_result_dic_list[i].keys():
+                with allure.step(f"1、数据库{key}断言"):
+                    with allure.step(f'预期结果：{key}={hope_result_dic_list[i][key]}'):
+                        real_result = result_list[key]
+                    with allure.step(f'实际结果：{key}={real_result}'):
+                        assert real_result == hope_result_dic_list[i][key]

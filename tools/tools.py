@@ -11,29 +11,44 @@ from VAR.VAR import *
 
 
 class Tools:
-    @allure.step('发送请求')
-    def send_post(self,action,data):
+    @allure.step('发送webservice请求')
+    def send_post(self, action, data):
         cli = Client(URL, headers=HEADERS, faults=False, timeout=15)
         result = cli.service.RequestMessage(action, data)
         return result
 
-    @allure.step('连接数据库查询')
+    @allure.step('连接数据查询')
     def oracle_link(self, sql):
         conn = cx_Oracle.connect('xir_trd', 'xpar', '191.168.0.213:1521/orcl')
         cursor = conn.cursor()
         all = cursor.execute(sql)
+        # 返回元组形式的查询结果
         result_list = all.fetchall()
+        # 循环获取查询的结果的每一组数据
+        for i in result_list:
+            # 将数据转换成list
+            result_list_i = list(i)
+            # 获取表字段的详情，包括字段名字、长度、属性等信息
+            des = cursor.description
+            # 将所有的字段名用.连接成一个字符串存储
+            all_field_str = ",".join(item[0] for item in des)
+            # 将字段名字使用","分开存储在list中
+            field_key = all_field_str.split(',')
+            # 设置成字典模式
+            dic_result = dict(zip(field_key, result_list_i))
+            last_dict_result = []
+            last_dict_result.append(dic_result)
         conn.close()
-        return result_list
+        return last_dict_result[0]
 
     # 定义获取系统时间的方法，分别返回我们需要的不同规格的时间
     def get_system_time(self):
         long_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         local_date = time.strftime("%Y-%m-%d", time.localtime())
         local_time = time.strftime("%H:%M:%S", time.localtime())
-        return long_date,local_date,local_time
-    # def set_dict_value(self,key):
+        return long_date, local_date, local_time
 
+    # def set_dict_value(self,key):
 
     def test_log(self):
         # 创建日志器
@@ -52,11 +67,11 @@ class Tools:
         return logger
 
 # tools = Tools()
-# all_val ={"sysOrdID":"1687246771"}
+# all_val = {"sysOrdID": "1687246771"}
 # # # # date = 2023-06-07
-# sql = f'select t.ordstatus from ttrd_fix_order t  where t.sysordid={all_val["sysOrdID"]}';
+# sql = 'select t.init_date from ttrd_fix_setflag t'
 #
 # # # print(sql)
 # result_list = tools.oracle_link(sql)
-# print(result_list[0][0])
+# print(result_list[0]['INIT_DATE'])
 # # print(tools.get_system_time()[1])

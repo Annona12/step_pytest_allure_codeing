@@ -25,7 +25,7 @@ def init():
     long_date, local_date, local_time = tools.get_system_time()
     sql = 'select t.init_date from ttrd_fix_setflag t'
     result_list = tools.oracle_link(sql)
-    if result_list[0][0] == local_date:
+    if result_list['INIT_DATE'] == local_date:
         pass
     else:
         step_init = 'data/shg_fix/DS_1100_STEP_INIT.xml'
@@ -33,6 +33,7 @@ def init():
                 {'sendDateTime': long_date, 'initDate': local_date})
         data = set_xml_string(step_init)
         result = tools.send_post(1100, data)
+        print('初始化响应信息：',result)
 
 
 # @allure.step('上交所协商成交申报')
