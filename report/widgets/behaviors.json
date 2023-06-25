@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"e82f4dbb252b1287955d47ddc6fa8428","name":"上交所固收（XSHG_FIX）","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
+{"total":1,"items":[{"uid":"e82f4dbb252b1287955d47ddc6fa8428","name":"上交所固收（XSHG_FIX）","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}}]}
