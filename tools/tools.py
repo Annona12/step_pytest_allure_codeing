@@ -7,7 +7,7 @@ import allure
 import cx_Oracle
 from suds.client import Client
 
-from constum.constum import *
+from constant.constant import *
 
 
 class Tools:
