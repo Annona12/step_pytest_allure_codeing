@@ -1,3 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Sun Jun 25 15:08:10 CST 2023","Sun Jun 25 15:08:16 CST 2023","6246","testcase","test_case_fix_excel","","","","上交所协商成交_正常撤单","上交所协商成交各接口各要素正确，撤单成功"
-"failed","Sun Jun 25 15:07:54 CST 2023","Sun Jun 25 15:07:57 CST 2023","3231","testcase","test_case_fix_excel","","","","上交所协商成交_正常申报","上交所协商成交各接口各要素正确，申报成功"
+"skipped","Sun Jun 25 15:43:32 CST 2023","Sun Jun 25 15:43:32 CST 2023","0","","","","","","test_shg_fix[data0]",""

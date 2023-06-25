@@ -7,7 +7,7 @@ import allure
 import cx_Oracle
 from suds.client import Client
 
-from VAR.VAR import *
+from var.var import *
 
 
 class Tools:

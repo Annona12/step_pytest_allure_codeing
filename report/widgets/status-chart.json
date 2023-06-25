@@ -1,1 +1,1 @@
-[{"uid":"c438a77496ec52e3","name":"上交所协商成交_正常撤单","time":{"start":1687676890333,"stop":1687676896579,"duration":6246},"status":"failed","severity":"critical"},{"uid":"83f6cbfd0ddd2b31","name":"上交所协商成交_正常申报","time":{"start":1687676874263,"stop":1687676877494,"duration":3231},"status":"failed","severity":"blocker"}]
+[{"uid":"ea357b45ba6b432d","name":"test_shg_fix[data0]","time":{"start":1687679012359,"stop":1687679012359,"duration":0},"status":"skipped","severity":"normal"}]
