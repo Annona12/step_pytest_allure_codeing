@@ -4,8 +4,10 @@
 # 开发时间：2023/6/16 17:36
 import openpyxl
 
+from constant.constant import EXCEL_PATH
 
-def read_excel(excel_path):
+
+def read_excel_version1(excel_path):
     excel = openpyxl.load_workbook(excel_path)
     sheet = excel.active
     case_list = []
@@ -14,4 +16,19 @@ def read_excel(excel_path):
             case_list.append(item)
     return case_list
 
-# print(read_excel('../data/step_case.xlsx'))
+
+def read_excel():
+    # 加载excel
+    excel = openpyxl.load_workbook(EXCEL_PATH)
+    # 获取excel中所有的sheet表名
+    sheet_names = excel.sheetnames
+    all_case_list = []
+    for i in range(len(sheet_names)):
+        sheet_active = excel[sheet_names[i]]
+        for item in sheet_active.values:
+            if type(item[0]) is int:
+                temp_list = list(item)
+                temp_list.append(sheet_names[i])
+                all_case_list.append(tuple(temp_list))
+    return all_case_list
+# print(read_excel())

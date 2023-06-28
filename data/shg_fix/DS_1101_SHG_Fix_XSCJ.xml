@@ -4,7 +4,7 @@
     <action>1101</action>
     <clientID>xIR</clientID>
     <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
-    <sendDateTime>2023-06-26 14:59:51</sendDateTime>
+    <sendDateTime>2023-06-28 13:46:51</sendDateTime>
     <fromIPMAC>191.168.0.53,</fromIPMAC>
   </header>
   <body>
@@ -14,7 +14,7 @@
         <orderType>9</orderType>
         <dir>S</dir>
         <iCode>010706</iCode>
-        <sysOrdID>1687762791</sysOrdID>
+        <sysOrdID>1687931211</sysOrdID>
         <iName>MDe5+tWuMDY=</iName>
         <exeMarket>XSHG_FIX</exeMarket>
         <ownerType>103</ownerType>
@@ -27,9 +27,9 @@
         <lastParPx>0</lastParPx>
         <cashMargin>1</cashMargin>
         <memo />
-        <ordDate>2023-06-26</ordDate>
-        <ordTime>14:59:51</ordTime>
-        <matchNo>513</matchNo>
+        <ordDate>2023-06-28</ordDate>
+        <ordTime>13:46:51</ordTime>
+        <matchNo>123</matchNo>
         <product>01</product>
         <tradeType>10</tradeType>
         <company>316</company>

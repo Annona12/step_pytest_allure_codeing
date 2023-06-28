@@ -48,30 +48,12 @@ class Tools:
         local_time = time.strftime("%H:%M:%S", time.localtime())
         return long_date, local_date, local_time
 
-    # def set_dict_value(self,key):
-
-    def test_log(self):
-        # 创建日志器
-        logger = logging.getLogger()
-        # 设置日志级别
-        logger.setLevel(logging.INFO)
-        # 判断如果没有定义过日志处理器，则进入下面的逻辑
-        if not logger.handlers:
-            # 指定日志信息显示在哪里 哪个控件
-            fh = logging.FileHandler('log.txt', encoding='utf-8')
-            logger.addHandler(fh)
-            # 设置日志文件的格式
-            fhfmt = '%(asctime)s -%(filename)s[line:%(lineno)d] -%(levelname)s: %(message)s'
-            shfmtSH = logging.Formatter(fhfmt)
-            fh.setFormatter(shfmtSH)
-        return logger
 
 # tools = Tools()
-# all_val = {"sysOrdID": "1687246771"}
 # # # # date = 2023-06-07
-# sql = 'select t.init_date from ttrd_fix_setflag t'
-#
-# # # print(sql)
+# sql = 'select t.init_date from ttrd_fix_setfl t'
+# #
+# # # # print(sql)
 # result_list = tools.oracle_link(sql)
-# print(result_list[0]['INIT_DATE'])
+# print(result_list)
 # # print(tools.get_system_time()[1])
