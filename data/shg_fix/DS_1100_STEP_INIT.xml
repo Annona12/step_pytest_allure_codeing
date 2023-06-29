@@ -4,10 +4,10 @@
     <action>1100</action>
     <clientID>xIR</clientID>
     <reqSn>935d557845994a3badd3c5cb65da9ac2</reqSn>
-    <sendDateTime>2023-06-28 09:38:47</sendDateTime>
+    <sendDateTime>2023-06-29 10:39:19</sendDateTime>
     <fromIPMAC>172.20.10.155,54-E1-AD-71-D4-2D</fromIPMAC>
   </header>
   <body>
-    <initDate>2023-06-28</initDate>
+    <initDate>2023-06-29</initDate>
   </body>
 </root>

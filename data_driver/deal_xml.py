@@ -22,7 +22,7 @@ def set_xml(xml_path, element_dic):
             i.text = element_dic[element]
     tree.write(xml_path)
 
-# set_xml('../data/shg_fix/DS_1101_SHG_Fix_QDBJ.xml',{'matchNo':'998'})
+# set_xml('../data/shg_fix/DS_1101_SHG_Fix_QDBJ.xml',{'matchNo1':'998'})
 
 def set_xml_string(xml_path):
     """

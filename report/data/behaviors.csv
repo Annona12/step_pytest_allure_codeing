@@ -1,4 +1,5 @@
 "Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
-"","上交所固收（XSHG_FIX）","协商成交（XSCJ_SHG）","3","0","0","0","0"
-"","上交所综业平台（XSHG_LARGE）","债券回售（XSHG_LARGE）","3","0","0","0","0"
 "","上交所竞价平台（XSHG_NORMAL）","股配债（XSHG_LARGE）","1","0","2","0","0"
+"","上交所综业平台（XSHG_LARGE）","债券回售（XSHG_LARGE）","3","0","0","0","0"
+"","上交所固收（XSHG_FIX）","协商成交（XSCJ_SHG）_反向用例","1","0","0","0","0"
+"","上交所固收（XSHG_FIX）","协商成交（XSCJ_SHG）_正向用例","2","0","0","0","0"
