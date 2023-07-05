@@ -10,7 +10,7 @@ from data_driver.deal_xml import set_xml, set_xml_string
 from tools.tools import Tools
 
 
-@allure.step('交易初始化')
+@allure.title('交易初始化')
 @pytest.fixture(scope='session', autouse=True)
 def init():
     """
@@ -34,32 +34,3 @@ def init():
         data = set_xml_string(step_init)
         result = tools.send_post(1100, data)
         print('初始化响应信息：',result)
-
-
-# @allure.step('上交所协商成交申报')
-# @pytest.fixture(scope='function')
-# def shg_xscj_sb():
-#     global shg_xscj_path
-#     shg_xscj_path = 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml'
-#     # 获取当前系统的时间
-#     long_date, local_date, local_time = tools.get_system_time()
-#     # 委托表中的主键，使用时间戳表示
-#     sysordid = str(int(time.time()))
-#
-#     # 使用random,生成需要每次不能重复的约定号
-#     match_no = str(random.randint(100, 999))
-#
-#     set_xml(shg_xscj_path,
-#             {'sendDateTime': long_date, 'ordDate': local_date, 'ordTime': local_time, 'matchNo': match_no,
-#              'sysOrdID': sysordid})
-#     data = set_xml_string(shg_xscj_path)
-#     result = tools.send_post(1101, data)
-#     time.sleep(2)
-#     with allure.step('数据库断言'):
-#         sql = f'select t.ordstatus from ttrd_fix_order t  where t.SYSORDID={sysordid}'
-#         result_list = tools.oracle_link(sql)
-#         with allure.step('预期结果：ord_status=5'):
-#             ord_status = result_list[0][0]
-#         with allure.step(f'实际结果：ord_status={ord_status}'):
-#             assert ord_status == 5
-#     return tools, sysordid, match_no

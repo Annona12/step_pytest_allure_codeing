@@ -4,7 +4,7 @@
     <action>1101</action>
     <clientID>xIR</clientID>
     <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
-    <sendDateTime>2023-06-29 17:33:08</sendDateTime>
+    <sendDateTime>2023-07-04 13:49:07</sendDateTime>
     <fromIPMAC>191.168.0.53,</fromIPMAC>
   </header>
   <body>
@@ -14,28 +14,28 @@
         <orderType>9</orderType>
         <dir>S</dir>
         <iCode>010706</iCode>
-        <sysOrdID>1688031188</sysOrdID>
+        <sysOrdID>1688449747</sysOrdID>
         <iName>MDe5+tWuMDY=</iName>
         <exeMarket>XSHG_FIX</exeMarket>
         <ownerType>103</ownerType>
         <bOrdCount>0</bOrdCount>
         <bOrdPrice>0</bOrdPrice>
         <sOrdCount>120</sOrdCount>
-        <sOrdPrice>102.8809</sOrdPrice>
+        <sOrdPrice>102.889</sOrdPrice>
         <settlType>103</settlType>
         <settlPeriod />
         <lastParPx>0</lastParPx>
         <cashMargin>1</cashMargin>
         <memo />
-        <ordDate>2023-06-29</ordDate>
-        <ordTime>17:33:08</ordTime>
-        <matchNo>110</matchNo>
+        <ordDate>2023-07-04</ordDate>
+        <ordTime>13:49:07</ordTime>
+        <matchNo>123</matchNo>
         <product>01</product>
         <tradeType>10</tradeType>
         <company>316</company>
         <trader>Z31608</trader>
         <seatno>88045</seatno>
-        <obTrader>Z31605</obTrader>
+        <obTrader>Z31606</obTrader>
         <iceCount>0</iceCount>
         <clientOrdid>lwy111</clientOrdid>
         <accname>lwy_shg_B883056635</accname>

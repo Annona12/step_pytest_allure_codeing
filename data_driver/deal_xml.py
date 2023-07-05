@@ -20,10 +20,7 @@ def set_xml(xml_path, element_dic):
     for element in element_dic:
         for i in root.iter(element):
             i.text = element_dic[element]
-    tree.write(xml_path)
-
-# set_xml('../data/shg_fix/DS_1101_SHG_Fix_QDBJ.xml',{'matchNo1':'998'})
-
+    tree.write('data/temp.xml',encoding='utf-8',xml_declaration=True)
 def set_xml_string(xml_path):
     """
     :param xml_path:该参数表示xmlb报文文件的地址

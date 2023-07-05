@@ -19,7 +19,7 @@ class Tools:
 
     @allure.step('连接数据查询')
     def oracle_link(self, sql):
-        conn = cx_Oracle.connect('xir_trd', 'xpar', '191.168.0.213:1521/orcl')
+        conn = cx_Oracle.connect('xir_trd', 'xpar', '191.168.0.213:1521/orcl1')
         cursor = conn.cursor()
         all = cursor.execute(sql)
         # 返回元组形式的查询结果

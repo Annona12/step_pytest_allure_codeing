@@ -24,8 +24,10 @@ def setup_module(module):
     all_val = {}
 
 
-@pytest.mark.parametrize('data', read_excel())
+@pytest.mark.parametrize('data',read_excel())
 def test_shg_fix(data):
+    if data[12] == 'no':
+        pytest.skip("标记该用例为不执行")
     # 动态生成测试用例的feature(一个feature代表一个sheet页)、story(一个story一个业务)、
     # title(测试用例名称)、description、severity
     if data[-1] is not None:
@@ -91,7 +93,7 @@ def test_shg_fix(data):
                     param_list_i['orgSysOrdID'] = all_val['sysOrdID']
                 # 获取了所有最新的需要修改的参数之后，调用工具函数将各个参数写入xml文件中
                 set_xml(xml_list[i], param_list_i)
-                data_xml = set_xml_string(xml_list[i])
+                data_xml = set_xml_string('data/temp.xml')
                 # 发送请求
                 result = tools.send_post(act_list[i], data_xml)
                 time.sleep(5)
