@@ -7,15 +7,6 @@ import openpyxl
 from constant.constant import EXCEL_PATH
 
 
-def read_excel_version1(excel_path):
-    excel = openpyxl.load_workbook(excel_path)
-    sheet = excel.active
-    case_list = []
-    for item in sheet.values:
-        if type(item[0]) is int:
-            case_list.append(item)
-    return case_list
-
 
 def read_excel():
     # 加载excel
@@ -31,4 +22,3 @@ def read_excel():
                 temp_list.append(sheet_names[i])
                 all_case_list.append(tuple(temp_list))
     return all_case_list
-# print(read_excel())
