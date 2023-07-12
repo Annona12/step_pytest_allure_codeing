@@ -14,6 +14,7 @@ class Tools:
     @allure.step('发送webservice请求')
     def send_post(self, action, data):
         cli = Client(URL, headers=HEADERS, faults=False, timeout=15)
+        logging.info('发送webservice请求')
         result = cli.service.RequestMessage(action, data)
         return result
 
@@ -41,6 +42,27 @@ class Tools:
         conn.close()
         return last_dict_result[0]
 
+    # 自定义日志处理器
+    def my_logger(self):
+        now_date = time.strftime("%Y_%m_%d", time.localtime())
+        # 日志器，创建日志器
+        logger = logging.getLogger()
+        # 设置日志级别
+        logger.setLevel(logging.INFO)
+        # 判断如果没有定义过日志处理器，则进入到下面的逻辑
+        # if not logger.handlers:
+        # 指定日志信息显示在哪里 哪个组件 控制台  文本文件  处理器
+        # 把日志显示到文本
+        # 创建文本处理器  文件放在哪  文件地址
+        fh = logging.FileHandler(f'../logs/log_{now_date}.txt', encoding='utf-8',mode ='a')
+        logger.addHandler(fh)
+
+        # 缺少哪个步骤  格式
+        # 格式器  创建格式器  设置自定义格式
+        fhfmt = '%(asctime)s [%(levelname)s] %(filename)s:%(lineno)s_%(funcName)s:%(message)s'
+        fhfmtFH = logging.Formatter(fhfmt)
+        fh.setFormatter(fhfmtFH)
+        return logger
     # 定义获取系统时间的方法，分别返回我们需要的不同规格的时间
     def get_system_time(self):
         long_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -50,6 +72,8 @@ class Tools:
 
 
 # tools = Tools()
+# tools.my_logger().info('info信息')
+# tools.my_logger().error('error信息')
 # # # # date = 2023-06-07
 # sql = 'select t.init_date from ttrd_fix_setfl t'
 # #

@@ -1,5 +1,6 @@
 # 开发者：Annona
 # 开发时间：2023/6/2 13:14
+import logging
 import random
 import time
 import xml.etree.ElementTree as ET
@@ -21,6 +22,7 @@ def set_xml(xml_path, element_dic):
         for i in root.iter(element):
             i.text = element_dic[element]
     tree.write('data/temp.xml',encoding='utf-8',xml_declaration=True)
+    logging.info('组装报文完成！！！')
 def set_xml_string(xml_path):
     """
     :param xml_path:该参数表示xmlb报文文件的地址

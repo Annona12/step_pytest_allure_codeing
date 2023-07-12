@@ -2,11 +2,11 @@
 # 开发时间：2023/6/19 14:46
 # 开发者：Annona
 # 开发时间：2023/6/16 17:36
+import logging
+
 import openpyxl
 
 from constant.constant import EXCEL_PATH
-
-
 
 def read_excel():
     # 加载excel
@@ -21,4 +21,5 @@ def read_excel():
                 temp_list = list(item)
                 temp_list.append(sheet_names[i])
                 all_case_list.append(tuple(temp_list))
+    logging.info('完成')
     return all_case_list

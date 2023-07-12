@@ -1,5 +1,6 @@
 # 开发者：Annona
 # 开发时间：2023/6/5 14:42
+import logging
 import random
 import time
 
@@ -11,7 +12,7 @@ from tools.tools import Tools
 
 
 @allure.title('交易初始化')
-@pytest.fixture(scope='session', autouse=True)
+# @pytest.fixture(scope='session', autouse=True)
 def init():
     """
         先查询一下数据库中的ttrd_fix_setflag.init_date是否已经初始化到当前系统日期;
@@ -26,6 +27,7 @@ def init():
     sql = 'select t.init_date from ttrd_fix_setflag t'
     result_list = tools.oracle_link(sql)
     if result_list['INIT_DATE'] == local_date:
+        logging.info('初始化日期[2023-07-10]等于已初始化日期[2023-07-10]，不允许重复初始化')
         pass
     else:
         step_init = 'data/shg_fix/DS_1100_STEP_INIT.xml'
@@ -33,4 +35,4 @@ def init():
                 {'sendDateTime': long_date, 'initDate': local_date})
         data = set_xml_string(step_init)
         result = tools.send_post(1100, data)
-        print('初始化响应信息：',result)
+        logging.info(result)
