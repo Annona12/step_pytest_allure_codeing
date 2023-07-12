@@ -7,9 +7,12 @@ import logging
 import openpyxl
 
 from constant.constant import EXCEL_PATH_LIST
+from tools.tools import Tools
 
 
 def read_excel():
+    global tools
+    tools = Tools()
     excel_path_list = EXCEL_PATH_LIST
     all_case_list = []
     try:
@@ -18,11 +21,14 @@ def read_excel():
             for sheet_name in excel.sheetnames:
                 sheet = excel[sheet_name]
                 for row in sheet.iter_rows(values_only=True):
-                    print(row)
                     if isinstance(row[0],int):
                         all_case_list.append(row+(excel_path,sheet_name))
-        logging.info('读取所有excel用例完成！！！')
+        tools.my_logger().info('读取所有excel用例完成！！！')
     except Exception as e:
-        logging.info(str(e))
+        tools.my_logger().info(str(e))
     return all_case_list
+# testcase = read_excel()
+# print(testcase)
+# print(testcase[0])
+# print(len(testcase))
 
