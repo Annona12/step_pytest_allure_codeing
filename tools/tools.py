@@ -1,83 +1,120 @@
 # 开发者：Annona
 # 开发时间：2023/6/5 14:41
-import logging
-import time
+import datetime
 
 import allure
 import cx_Oracle
+import pymysql
 from suds.client import Client
 
 from constant.constant import *
+from my_logger import MyLogger
 
 
 class Tools:
+    global my_logger
+    my_logger = MyLogger(LOG_PATH)
+    def __init__(self):
+        self.connection = None
+
     @allure.step('发送webservice请求')
     def send_post(self, action, data):
-        cli = Client(URL, headers=HEADERS, faults=False, timeout=15)
-        result = cli.service.RequestMessage(action, data)
-        return result
 
-    @allure.step('连接数据查询')
-    def oracle_link(self, sql):
-        conn = cx_Oracle.connect('xir_trd', 'xpar', '191.168.0.213:1521/orcl1')
-        cursor = conn.cursor()
-        all = cursor.execute(sql)
-        # 返回元组形式的查询结果
-        result_list = all.fetchall()
-        # 循环获取查询的结果的每一组数据
-        for i in result_list:
-            # 将数据转换成list
-            result_list_i = list(i)
-            # 获取表字段的详情，包括字段名字、长度、属性等信息
+        try:
+            cli = Client(URL, headers=HEADERS, faults=False, timeout=15)
+            result = cli.service.RequestMessage(action, data)
+            my_logger.info('发送POST请求完成')
+            return result
+        except Exception as e:
+            my_logger.error('发送POST请求失败,错误信息：')
+            my_logger.error(str(e))
+            return None
+
+    def conn_oracle(self, dsn, user, passwd):
+        """
+        连接oracle数据库
+        :param dsn: 数据库的数据源名称，它可以是一个 TNS 格式的连接字符串，或者是一个字典对象.
+        :param user: 要连接的数据库用户的用户名
+        :param passwd: 要连接的数据库用户的密码
+        :return: 返回连接实例
+        """
+        try:
+            self.connection = cx_Oracle.connect(user=user, password=passwd, dsn=dsn)
+        except cx_Oracle.Error as e:
+            my_logger.error('连接数据库失败，错误信息：')
+            my_logger.error(e)
+
+    def conn_mysql(self, host, port, user, passwd, database, charset):
+        """
+        连接mysql数据库
+        :param host: ip
+        :param port: 端口
+        :param user: 用户名
+        :param passwd: 密码
+        :param database: 数据库实例
+        :param charset: 编码格式
+        :return: 连接实例
+        """
+        try:
+            self.connection = pymysql.connect(
+                host=host,
+                port=port,
+                user=user,
+                passwd=passwd,
+                database=database,
+                charset=charset
+            )
+        except pymysql.Error as e:
+            my_logger.error('连接数据库失败,错误信息：')
+            my_logger.error(e)
+
+    @allure.step('数据库查询')
+    def sql_check(self, sql):
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute(sql)
+            results = cursor.fetchall()
+            result_list = []
+            # 获取每个字段的信息
             des = cursor.description
-            # 将所有的字段名用.连接成一个字符串存储
-            all_field_str = ",".join(item[0] for item in des)
-            # 将字段名字使用","分开存储在list中
-            field_key = all_field_str.split(',')
-            # 设置成字典模式
-            dic_result = dict(zip(field_key, result_list_i))
-            last_dict_result = []
-            last_dict_result.append(dic_result)
-        conn.close()
-        return last_dict_result[0]
+            for result in results:
+                result_dict = {}
+                for i in range(len(result)):
+                    result_dict[des[i][0]] = result[i]
+                result_list.append(result_dict)
+            cursor.close()
+            return result_list
+        except cx_Oracle.Error as e:
+            my_logger.error('执行SQL查询失败，错误信息：')
+            my_logger.error(e)
+        except pymysql.Error as e:
+            my_logger.error('执行SQL查询失败,错误信息：')
+            my_logger.error(e)
 
-    # 自定义日志处理器
-    def my_logger(self):
-        # 日志器，创建日志器
-        logger = logging.getLogger()
-        # 设置日志级别
-        logger.setLevel(logging.INFO)
-        # 判断如果没有定义过日志处理器，则进入到下面的逻辑
-        # if not logger.handlers:
-        # 指定日志信息显示在哪里 哪个组件 控制台  文本文件  处理器
-        # 把日志显示到文本
-        # 创建文本处理器  文件放在哪  文件地址
-        # 判断如果没有定义过日志处理器，则进入到下面的逻辑
-        if not logger.handlers:
-            fh = logging.FileHandler(LOG_PATH, encoding='utf-8',mode ='a+')
-            logger.addHandler(fh)
+    def close_connection(self):
+        if self.connection:
+            self.connection.close()
+            my_logger.info('数据库连接关闭！！！')
 
-            # 缺少哪个步骤  格式
-            # 格式器  创建格式器  设置自定义格式
-            fhfmt = '%(asctime)s [%(levelname)s] %(filename)s:%(lineno)s_%(funcName)s:%(message)s'
-            fhfmtFH = logging.Formatter(fhfmt)
-            fh.setFormatter(fhfmtFH)
-        return logger
-    # 定义获取系统时间的方法，分别返回我们需要的不同规格的时间
+
     def get_system_time(self):
-        long_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        local_date = time.strftime("%Y-%m-%d", time.localtime())
-        local_time = time.strftime("%H:%M:%S", time.localtime())
+        now = datetime.now()
+        long_date = now.strftime("%Y-%m-%d %H:%M:%S")
+        local_date = now.strftime("%Y-%m-%d")
+        local_time = now.strftime("%H:%M:%S")
         return long_date, local_date, local_time
 
-
-# tools = Tools()
-# tools.my_logger().info('info信息')
-# tools.my_logger().error('error信息')
-# # # # date = 2023-06-07
-# sql = 'select t.init_date from ttrd_fix_setfl t'
-# #
-# # # # print(sql)
-# result_list = tools.oracle_link(sql)
-# print(result_list)
-# # print(tools.get_system_time()[1])
+if __name__ == '__main__':
+    ky = Tools()
+    try:
+        ky.conn_oracle(
+            dsn='191.168.0.213:1521/orcl1',
+            user='xir_trd',
+            passwd='xpar'
+        )
+        requests = ky.sql_check(sql='SELECT t.* FROM TTRD_FIX_PLATFROM_INFO_STATUS t')
+        print(requests)
+    except:
+        print("查询数据库失败")
+    finally:
+        ky.close_connection()

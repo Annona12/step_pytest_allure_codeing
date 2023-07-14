@@ -2,8 +2,6 @@
 # 开发时间：2023/7/12 13:53
 import logging
 import datetime
-import time
-
 
 class MyLogger:
     def __init__(self, log_directory):

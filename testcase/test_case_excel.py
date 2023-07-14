@@ -5,8 +5,8 @@ import allure
 import openpyxl
 import pytest
 
-from constant.constant import EXCEL_PATH_LIST
-from data_driver.deal_excel_01 import read_excel
+from constant.constant import EXCEL_PATH_LIST, LOG_PATH
+from data_driver.deal_excel import read_excel
 from data_driver.deal_xml import set_xml, set_xml_string
 from tools.my_logger import MyLogger
 from tools.tools import Tools
@@ -14,7 +14,7 @@ from tools.tools import Tools
 
 def setup_module(module):
     global tools, all_val, excel_path_list,my_logger
-    my_logger = MyLogger('../logs')
+    my_logger = MyLogger(LOG_PATH)
     tools = Tools()
 
     excel_path_list = EXCEL_PATH_LIST
