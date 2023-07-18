@@ -3,8 +3,7 @@
 import logging
 import xml.etree.ElementTree as ET
 
-from constant.constant import LOG_PATH
-from tools.my_logger import MyLogger
+from constant.constant import *
 
 """
 该函数用来统一处理我们需要修改xml参数的方法
@@ -12,9 +11,6 @@ from tools.my_logger import MyLogger
 
 
 def set_xml(xml_path, element_dic):
-    global my_logger
-    my_logger = MyLogger(LOG_PATH)
-
     """
     :param xml_path:该参数表示xml报文文件的地址
     :param element_dic:该参数表示需要修改的参数的字典
@@ -23,16 +19,16 @@ def set_xml(xml_path, element_dic):
     try:
         tree = ET.parse(xml_path)
         root = tree.getroot()
-        for element, value in element_dic.item():
+        print(element_dic)
+        for element, value in element_dic.items():
             for ele in root.iter(element):
                 ele.text = value
-
         tree.write('data/temp.xml', encoding='utf-8', xml_declaration=True)
-        my_logger().info('组装报文完成！！！')
+        MY_LOGGER.info('组装报文完成！')
     except Exception as e:
-        my_logger().error('修改XML参数失败:')
-        my_logger().error(str(e))
-
+        print(e)
+        MY_LOGGER.error('修改XML参数失败:')
+        MY_LOGGER.error(str(e))
 
 def set_xml_string(xml_path):
     """
@@ -42,7 +38,8 @@ def set_xml_string(xml_path):
     try:
         with open(xml_path, mode='r', encoding='utf-8') as file:
             params_string = file.read()
+        MY_LOGGER.info('读取XML完成！')
         return params_string
     except Exception as e:
-        my_logger().error('读取XML文件失败: ')
-        my_logger().error(str(e))
+        MY_LOGGER.error('读取XML文件失败: ')
+        MY_LOGGER.error(str(e))

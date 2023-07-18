@@ -7,12 +7,9 @@ import logging
 import openpyxl
 
 from constant.constant import *
-from tools.my_logger import MyLogger
 
 
 def read_excel():
-    global my_logger
-    my_logger = MyLogger(LOG_PATH)
     excel_path_list = EXCEL_PATH_LIST
     all_case_list = []
     try:
@@ -23,9 +20,9 @@ def read_excel():
                 for row in sheet.iter_rows(values_only=True):
                     if isinstance(row[0],int):
                         all_case_list.append(row+(excel_path,sheet_name))
-        my_logger.info('读取所有excel用例完成！！！')
+        MY_LOGGER.info('读取所有excel用例完成！！！')
     except Exception as e:
-        my_logger.my_logger().info(str(e))
+        MY_LOGGER.error(str(e))
     return all_case_list
 # testcase = read_excel()
 # print(testcase)

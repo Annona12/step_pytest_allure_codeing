@@ -1,6 +1,8 @@
 # 开发者：Annona
 # 开发时间：2023/6/5 14:41
 import datetime
+import logging
+import time
 
 import allure
 import cx_Oracle
@@ -8,26 +10,22 @@ import pymysql
 from suds.client import Client
 
 from constant.constant import *
-from my_logger import MyLogger
 
 
 class Tools:
-    global my_logger
-    my_logger = MyLogger(LOG_PATH)
     def __init__(self):
         self.connection = None
 
     @allure.step('发送webservice请求')
     def send_post(self, action, data):
-
         try:
             cli = Client(URL, headers=HEADERS, faults=False, timeout=15)
             result = cli.service.RequestMessage(action, data)
-            my_logger.info('发送POST请求完成')
+            MY_LOGGER.info('发送POST请求完成')
             return result
         except Exception as e:
-            my_logger.error('发送POST请求失败,错误信息：')
-            my_logger.error(str(e))
+            MY_LOGGER.error('发送POST请求失败,错误信息：')
+            MY_LOGGER.error(str(e))
             return None
 
     def conn_oracle(self, dsn, user, passwd):
@@ -41,8 +39,8 @@ class Tools:
         try:
             self.connection = cx_Oracle.connect(user=user, password=passwd, dsn=dsn)
         except cx_Oracle.Error as e:
-            my_logger.error('连接数据库失败，错误信息：')
-            my_logger.error(e)
+            MY_LOGGER.error('连接数据库失败，错误信息：')
+            MY_LOGGER.error(e)
 
     def conn_mysql(self, host, port, user, passwd, database, charset):
         """
@@ -65,8 +63,8 @@ class Tools:
                 charset=charset
             )
         except pymysql.Error as e:
-            my_logger.error('连接数据库失败,错误信息：')
-            my_logger.error(e)
+            MY_LOGGER.error('连接数据库失败,错误信息：')
+            MY_LOGGER.error(str(e))
 
     @allure.step('数据库查询')
     def sql_check(self, sql):
@@ -83,38 +81,22 @@ class Tools:
                     result_dict[des[i][0]] = result[i]
                 result_list.append(result_dict)
             cursor.close()
-            return result_list
+            return result_list[0]
         except cx_Oracle.Error as e:
-            my_logger.error('执行SQL查询失败，错误信息：')
-            my_logger.error(e)
+            MY_LOGGER.error('执行SQL查询失败，错误信息：')
+            MY_LOGGER.error(e)
         except pymysql.Error as e:
-            my_logger.error('执行SQL查询失败,错误信息：')
-            my_logger.error(e)
+            MY_LOGGER.error('执行SQL查询失败,错误信息：')
+            MY_LOGGER.error(e)
 
     def close_connection(self):
         if self.connection:
             self.connection.close()
-            my_logger.info('数据库连接关闭！！！')
-
+            MY_LOGGER.info('数据库连接关闭！！！')
 
     def get_system_time(self):
-        now = datetime.now()
-        long_date = now.strftime("%Y-%m-%d %H:%M:%S")
-        local_date = now.strftime("%Y-%m-%d")
-        local_time = now.strftime("%H:%M:%S")
+        long_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        local_date = time.strftime("%Y-%m-%d", time.localtime())
+        local_time = time.strftime("%H:%M:%S", time.localtime())
         return long_date, local_date, local_time
 
-if __name__ == '__main__':
-    ky = Tools()
-    try:
-        ky.conn_oracle(
-            dsn='191.168.0.213:1521/orcl1',
-            user='xir_trd',
-            passwd='xpar'
-        )
-        requests = ky.sql_check(sql='SELECT t.* FROM TTRD_FIX_PLATFROM_INFO_STATUS t')
-        print(requests)
-    except:
-        print("查询数据库失败")
-    finally:
-        ky.close_connection()

@@ -3,30 +3,20 @@
 import logging
 import datetime
 
-class MyLogger:
-    def __init__(self, log_directory):
-        self.log_directory = log_directory
-        self.logger = logging.getLogger(__name__)
-        self.logger.setLevel(logging.DEBUG)
-        formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(filename)s:%(lineno)s_%(funcName)s:%(message)s')
 
+def my_logger(log_directory):
+    # 日志器，创建日志器
+    logger = logging.getLogger()
+    # 设置日志级别
+    logger.setLevel(logging.INFO)
+    # 判断如果没有定义过日志处理器，则进入到下面的逻辑
+    if not logger.handlers:
         current_date = datetime.datetime.now().strftime('%Y_%m_%d')
-        log_file_path = f'{self.log_directory}/log_{current_date}.txt'
-        file_handler = logging.FileHandler(log_file_path,encoding='utf-8',mode ='a+')
-        file_handler.setFormatter(formatter)
-        self.logger.addHandler(file_handler)
+        log_file_path = f'{log_directory}/log_{current_date}.txt'
+        fh = logging.FileHandler(log_file_path, encoding='utf-8', mode='a+')
+        logger.addHandler(fh)
 
-    def debug(self, message):
-        self.logger.debug(message)
-
-    def info(self, message):
-        self.logger.info(message)
-
-    def warning(self, message):
-        self.logger.warning(message)
-
-    def error(self, message):
-        self.logger.error(message)
-
-    def critical(self, message):
-        self.logger.critical(message)
+        fhfmt = '%(asctime)s [%(levelname)s] %(filename)s:%(lineno)s_%(funcName)s:%(message)s'
+        fhfmtFH = logging.Formatter(fhfmt)
+        fh.setFormatter(fhfmtFH)
+    return logger

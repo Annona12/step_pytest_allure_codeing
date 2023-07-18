@@ -1,1 +1,0 @@
-INFO     root:test_case_fix_excel.py:30 (1, '债券回售（XSHG_LARGE）', '上交所协商成交_正常申报', '上交所协商成交各接口各要素正确，申报成功', 'blocker', 1101, 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"111","sysOrdID":""', 'select t.ordstatus,t.errinfo from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":5}', '修改参数转换成字典格式错误，请检查修改参数列数据！！！', 'no', '上交所综业平台（XSHG_LARGE）')
