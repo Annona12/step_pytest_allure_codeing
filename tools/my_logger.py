@@ -13,6 +13,7 @@ def my_logger(log_directory):
     if not logger.handlers:
         current_date = datetime.datetime.now().strftime('%Y_%m_%d')
         log_file_path = f'{log_directory}/log_{current_date}.txt'
+        # 创建文本处理器
         fh = logging.FileHandler(log_file_path, encoding='utf-8', mode='a+')
         logger.addHandler(fh)
 
