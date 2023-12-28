@@ -10,37 +10,41 @@
   <body>
     <orders>
       <order>
-        <sysordid />
-        <ordDate />
-        <ordTime />
+        <!--需要唯一或者需要每天修改的日期以及客户端传递的编号 -->
+        <clientOrdid>xir20230222</clientOrdid>
+        <sysOrdID>1688449747</sysOrdID>
+        <ordDate>2023-07-04</ordDate>
+        <ordTime>13:49:07</ordTime>
+        <!--固定不动 -->
         <product>01</product>
         <tradeType>10</tradeType>
+        <orderType>9</orderType>
+        <declareType>6</declareType>
+        <mtype>XSHG</mtype>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <shareProperty>01</shareProperty>
+        <ownerType>103</ownerType>
+        <!--交易要素信息-->
         <company>316</company>
-        <trader>Z31605</trader>
+        <trader>Z31608</trader>
         <seatno>88045</seatno>
         <iceCount>0</iceCount>
-        <clientOrdid>xir20230222</clientOrdid>  
         <accname>lwy_&#22806;&#35777;_B883057982</accname>
-        <shareProperty>01</shareProperty>
         <secuExtAccid>B883057982</secuExtAccid>
-        <orderType>9</orderType>
         <dir>D</dir>
-        <declareType>6</declareType>
-        <iCode>010706</iCode>
+        <iCode>010609</iCode>
         <iName>MDe5+tWuMDY=</iName>
-        <mtype>XSHG</mtype>
-        <preTradeAnonymity>0</preTradeAnonymity>
-        <exeMarket>XSHG_FIX</exeMarket>
-        <ownerType>103</ownerType>
         <bOrdCount>1000</bOrdCount>
         <bOrdPrice>101.120</bOrdPrice>
         <sOrdCount>1000</sOrdCount>
         <sOrdPrice>102.220</sOrdPrice>
+
+        <preTradeAnonymity>0</preTradeAnonymity><!--是否匿名报价1-匿名报价，0不匿名报价 -->
+        <orderRestrictions>0</orderRestrictions><!--是否做市报价5，做市报价，0非做市报价-->
         <settlType>104</settlType>
         <settlPeriod />
         <lastParPx>0</lastParPx>
         <cashMargin>1</cashMargin>
-        <orderRestrictions>0</orderRestrictions>
         <localOrdId>1</localOrdId>
         <memo />
       </order>

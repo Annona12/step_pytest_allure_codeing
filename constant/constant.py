@@ -28,4 +28,4 @@ ORACLE_PASSWORD = 'xpar'
 
 # Step程序的上交所固收通道的交易员
 TRADER = 'Z31608'
-OB_TRADER = 'Z31605'
+OB_TRADER = 'Z31606'

@@ -13,7 +13,7 @@
         <secuExtAccid>B883056635</secuExtAccid>
         <orderType>9</orderType>
         <dir>S</dir>
-        <iCode>010706</iCode>
+        <iCode>010609</iCode>
         <sysOrdID>1688449747</sysOrdID>
         <iName>MDe5+tWuMDY=</iName>
         <exeMarket>XSHG_FIX</exeMarket>
@@ -21,7 +21,7 @@
         <bOrdCount>0</bOrdCount>
         <bOrdPrice>0</bOrdPrice>
         <sOrdCount>120</sOrdCount>
-        <sOrdPrice>102.889</sOrdPrice>
+        <sOrdPrice>102.00</sOrdPrice>
         <settlType>103</settlType>
         <settlPeriod />
         <lastParPx>0</lastParPx>

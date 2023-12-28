@@ -1,0 +1,2425 @@
+2023-11-30 11:20:07,799 [INFO] deal_excel.py:23_read_excel:读取所有excel用例完成！！！
+2023-11-30 11:20:07,811 [INFO] conftest.py:24_init:前置函数，交易初始化！
+2023-11-30 11:20:07,811 [INFO] conftest.py:29_init:select t.init_date from ttrd_fix_setflag t
+2023-11-30 11:20:09,953 [INFO] conftest.py:37_init:{'INIT_DATE': '2023-10-23'}
+2023-11-30 11:20:10,212 [INFO] tools.py:95_close_connection:数据库连接关闭！！！
+2023-11-30 11:20:10,212 [INFO] conftest.py:48_send_init_request:sendDateTime: 2023-11-30 11:20:07, initDate: 2023-11-30
+2023-11-30 11:20:10,216 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:20:10,216 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:20:10,216 [INFO] conftest.py:52_send_init_request:<?xml version='1.0' encoding='utf-8'?>
+<root>
+    <header>
+    <msgType>R</msgType>
+    <action>1100</action>
+    <clientID>xIR</clientID>
+    <reqSn>935d557845994a3badd3c5cb65da9ac2</reqSn>
+    <sendDateTime>2023-11-30 11:20:07</sendDateTime>
+    <fromIPMAC>172.20.10.155,54-E1-AD-71-D4-2D</fromIPMAC>
+  </header>
+  <body>
+    <initDate>2023-11-30</initDate>
+  </body>
+</root>
+2023-11-30 11:20:12,629 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:20:12,629 [INFO] conftest.py:54_send_init_request:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1100</action>
+    <clientID>xIR</clientID>
+    <reqSn>935d557845994a3badd3c5cb65da9ac2</reqSn>
+    <sendDateTime>2023-11-30 11:20:12</sendDateTime>
+    <fromIPMAC>172.20.10.155,54-E1-AD-71-D4-2D</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+</root>)
+2023-11-30 11:20:12,629 [INFO] test_case_excel.py:20_setup_module:setup_module前置函数执行完成，开始执行测试用例！！！
+2023-11-30 11:20:12,633 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 11:20:12,633 [INFO] test_case_excel.py:27_test_jys:(1, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常申报', '上交所协商成交各接口各要素正确，申报成功', 'blocker', 1101, 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"110","sysOrdID":""}', 'select t.ordstatus,t.errinfo from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":2}', None, 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 11:20:12,677 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:20:12,677 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:20:12,677 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:20:12</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010706</iCode>
+        <sysOrdID>1701314412</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:20:12</ordTime>
+        <matchNo>110</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:20:12,785 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:20:12,785 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:20:12</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:20:17,913 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus,t.errinfo from ttrd_fix_order t  where t.sysordid=1701314412
+2023-11-30 11:20:17,921 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 2, 'ERRINFO': '1811:投资者持仓不足'}
+2023-11-30 11:20:17,921 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 11:20:18,653 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 11:20:18,653 [INFO] test_case_excel.py:27_test_jys:(2, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常撤单', '上交所协商成交各接口各要素正确，撤单成功', 'critical', '1101;1102', 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml;data/shg_fix/DS_1102_SHG_CD.xml', '{"matchNo":"112","sysOrdID":""};{"orgSysOrdID":""}', 'select t.ordstatus,t.act_status,t.acttype from ttrd_fix_order t where t.sysordid={0};select t.actstatus,t.acttype from ttrd_fix_action t where t.o_sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":2,"ACT_STATUS":"2","ACTTYPE":"W"};{"ACTSTATUS":2,"ACTTYPE":"W"}', None, 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 11:20:18,693 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:20:18,697 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:20:18,697 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:20:18</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010706</iCode>
+        <sysOrdID>1701314418</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:20:18</ordTime>
+        <matchNo>112</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:20:18,790 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:20:18,790 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:20:18</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:20:23,790 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:20:23,794 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:20:23,794 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1102</action>
+    <clientID>xIR</clientID>
+    <reqSn>1b6bf9b933204547813ce42127872cbb</reqSn>
+    <sendDateTime>2023-11-30 11:20:23</sendDateTime>
+    <fromIPMAC>172.20.10.30,8C-16-45-9F-36-50</fromIPMAC>
+  </header>
+  <body>
+    <actions>
+    	 <action>
+	        <actDate>2023-11-30</actDate>
+	        <actTime>11:20:23</actTime>
+	        <sysActID />
+	        <actType>W</actType>
+	        <orgOrdDate>2023-11-30</orgOrdDate>
+	        <orgSysOrdID>1701314418</orgSysOrdID>
+	        <extActID />
+	        <userID />
+	        <compID />
+         </action>
+    </actions>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress>127.0.0.1</clientInnerIpAddress>
+      <clientMacaddress>8C16459F3650^C0B6F9E3ABDA^C2B6F9E3ABD9^C0B6F9E3ABD9^00FF818789ED^00FFE575E6DC^00FF1F4140A5</clientMacaddress>
+      <clientHarddiskno>LSL7012818516F02116</clientHarddiskno>
+      <clientPcname>B1221</clientPcname>
+      <clientCpuno>BFEBFBFF000806E9</clientCpuno>
+      <clientDiskpartitioninfo>C^NTFS^119G</clientDiskpartitioninfo>
+      <clientReellabel>000B-1D29</clientReellabel>
+      <clientName>xIRCS</clientName>
+      <clientVersion>1.3.0.075_QUOTE_3</clientVersion>
+      <isTerminalinfo>1</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:20:23,862 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:20:23,862 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1102</action>
+    <clientID>xIR</clientID>
+    <reqSn>1b6bf9b933204547813ce42127872cbb</reqSn>
+    <sendDateTime>2023-11-30 11:20:23</sendDateTime>
+    <fromIPMAC>172.20.10.30,8C-16-45-9F-36-50</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:20:28,927 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus,t.act_status,t.acttype from ttrd_fix_order t where t.sysordid=1701314418
+2023-11-30 11:20:28,931 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 2, 'ACT_STATUS': '2', 'ACTTYPE': 'W'}
+2023-11-30 11:20:28,931 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 11:20:29,059 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 11:20:29,059 [INFO] test_case_excel.py:27_test_jys:(3, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常成交', '上交所协商成交各接口各要素正确，正常成交', 'blocker', '1101;1101', 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml;data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"113","sysOrdID":"","dir":"B","bOrdCount":"120","bOrdPrice":"102.889","sOrdCount":"0","sOrdPrice":"0","trader":"Z31605","obTrader":"Z31608"};{"sysOrdID":"","matchNo":"113","dir":"S","sOrdCount":"120","sOrdPrice":"102.889","bOrdCount":"0","bOrdPrice":"0","trader":"Z31608","obTrader":"Z31605"}', 'select t.ordstatus from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":7}', None, 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 11:20:29,103 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:20:29,103 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:20:29,103 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:20:29</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>B</dir>
+        <iCode>010706</iCode>
+        <sysOrdID>1701314429</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>120</bOrdCount>
+        <bOrdPrice>102.889</bOrdPrice>
+        <sOrdCount>0</sOrdCount>
+        <sOrdPrice>0</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:20:29</ordTime>
+        <matchNo>113</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31605</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31608</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:20:29,178 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:20:29,178 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:20:29</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:20:34,180 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:20:34,181 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:20:34,181 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:20:34</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010706</iCode>
+        <sysOrdID>1701314434</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:20:34</ordTime>
+        <matchNo>113</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31605</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:20:34,246 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:20:34,246 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:20:34</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:20:39,304 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus from ttrd_fix_order t  where t.sysordid=1701314434
+2023-11-30 11:20:39,307 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 2}
+2023-11-30 11:20:39,308 [INFO] test_case_excel.py:148_test_jys:测试不通过
+2023-11-30 11:25:11,444 [INFO] deal_excel.py:23_read_excel:读取所有excel用例完成！！！
+2023-11-30 11:25:11,456 [INFO] conftest.py:24_init:前置函数，交易初始化！
+2023-11-30 11:25:11,460 [INFO] conftest.py:29_init:select t.init_date from ttrd_fix_setflag t
+2023-11-30 11:25:11,888 [INFO] conftest.py:37_init:{'INIT_DATE': '2023-11-30'}
+2023-11-30 11:25:11,896 [INFO] tools.py:95_close_connection:数据库连接关闭！！！
+2023-11-30 11:25:11,896 [INFO] conftest.py:43_init:初始化日期[2023-07-10]等于已初始化日期[2023-07-10]，不允许重复初始化
+2023-11-30 11:25:11,900 [INFO] test_case_excel.py:20_setup_module:setup_module前置函数执行完成，开始执行测试用例！！！
+2023-11-30 11:25:11,900 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 11:25:11,900 [INFO] test_case_excel.py:27_test_jys:(1, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常申报', '上交所协商成交各接口各要素正确，申报成功', 'blocker', 1101, 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"110","sysOrdID":""}', 'select t.ordstatus,t.errinfo from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":2}', None, 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 11:25:11,952 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:25:11,952 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:25:11,952 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:25:11</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701314711</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:25:11</ordTime>
+        <matchNo>110</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:25:12,120 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:25:12,124 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:25:12</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:25:17,178 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus,t.errinfo from ttrd_fix_order t  where t.sysordid=1701314711
+2023-11-30 11:25:17,182 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 5, 'ERRINFO': None}
+2023-11-30 11:25:17,182 [INFO] test_case_excel.py:148_test_jys:测试不通过
+2023-11-30 11:25:17,962 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 11:25:17,966 [INFO] test_case_excel.py:27_test_jys:(2, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常撤单', '上交所协商成交各接口各要素正确，撤单成功', 'critical', '1101;1102', 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml;data/shg_fix/DS_1102_SHG_CD.xml', '{"matchNo":"112","sysOrdID":""};{"orgSysOrdID":""}', 'select t.ordstatus,t.act_status,t.acttype from ttrd_fix_order t where t.sysordid={0};select t.actstatus,t.acttype from ttrd_fix_action t where t.o_sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":2,"ACT_STATUS":"2","ACTTYPE":"W"};{"ACTSTATUS":2,"ACTTYPE":"W"}', None, 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 11:25:18,014 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:25:18,018 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:25:18,018 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:25:18</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701314718</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:25:18</ordTime>
+        <matchNo>112</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:25:18,066 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:25:18,066 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:25:18</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:25:23,067 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:25:23,067 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:25:23,067 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1102</action>
+    <clientID>xIR</clientID>
+    <reqSn>1b6bf9b933204547813ce42127872cbb</reqSn>
+    <sendDateTime>2023-11-30 11:25:23</sendDateTime>
+    <fromIPMAC>172.20.10.30,8C-16-45-9F-36-50</fromIPMAC>
+  </header>
+  <body>
+    <actions>
+    	 <action>
+	        <actDate>2023-11-30</actDate>
+	        <actTime>11:25:23</actTime>
+	        <sysActID />
+	        <actType>W</actType>
+	        <orgOrdDate>2023-11-30</orgOrdDate>
+	        <orgSysOrdID>1701314718</orgSysOrdID>
+	        <extActID />
+	        <userID />
+	        <compID />
+         </action>
+    </actions>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress>127.0.0.1</clientInnerIpAddress>
+      <clientMacaddress>8C16459F3650^C0B6F9E3ABDA^C2B6F9E3ABD9^C0B6F9E3ABD9^00FF818789ED^00FFE575E6DC^00FF1F4140A5</clientMacaddress>
+      <clientHarddiskno>LSL7012818516F02116</clientHarddiskno>
+      <clientPcname>B1221</clientPcname>
+      <clientCpuno>BFEBFBFF000806E9</clientCpuno>
+      <clientDiskpartitioninfo>C^NTFS^119G</clientDiskpartitioninfo>
+      <clientReellabel>000B-1D29</clientReellabel>
+      <clientName>xIRCS</clientName>
+      <clientVersion>1.3.0.075_QUOTE_3</clientVersion>
+      <isTerminalinfo>1</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:25:23,107 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:25:23,107 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1102</action>
+    <clientID>xIR</clientID>
+    <reqSn>1b6bf9b933204547813ce42127872cbb</reqSn>
+    <sendDateTime>2023-11-30 11:25:23</sendDateTime>
+    <fromIPMAC>172.20.10.30,8C-16-45-9F-36-50</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:25:28,272 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus,t.act_status,t.acttype from ttrd_fix_order t where t.sysordid=1701314718
+2023-11-30 11:25:28,280 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 9, 'ACT_STATUS': '6', 'ACTTYPE': 'W'}
+2023-11-30 11:25:28,280 [INFO] test_case_excel.py:148_test_jys:测试不通过
+2023-11-30 11:25:28,316 [INFO] test_case_excel.py:148_test_jys:测试不通过
+2023-11-30 11:25:28,348 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 11:25:28,428 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 11:25:28,428 [INFO] test_case_excel.py:27_test_jys:(3, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常成交', '上交所协商成交各接口各要素正确，正常成交', 'blocker', '1101;1101', 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml;data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"113","sysOrdID":"","dir":"B","bOrdCount":"120","bOrdPrice":"102.889","sOrdCount":"0","sOrdPrice":"0","trader":"Z31606","obTrader":"Z31608"};{"sysOrdID":"","matchNo":"113","dir":"S","sOrdCount":"120","sOrdPrice":"102.889","bOrdCount":"0","bOrdPrice":"0","trader":"Z31608","obTrader":"Z31605"}', 'select t.ordstatus from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":7}', None, 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 11:25:28,491 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:25:28,491 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:25:28,491 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:25:28</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>B</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701314728</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>120</bOrdCount>
+        <bOrdPrice>102.889</bOrdPrice>
+        <sOrdCount>0</sOrdCount>
+        <sOrdPrice>0</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:25:28</ordTime>
+        <matchNo>113</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31606</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31608</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:25:28,551 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:25:28,551 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:25:28</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:25:33,553 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:25:33,553 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:25:33,553 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:25:33</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701314733</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:25:33</ordTime>
+        <matchNo>113</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31605</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:25:33,613 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:25:33,613 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:25:33</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:25:38,721 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus from ttrd_fix_order t  where t.sysordid=1701314733
+2023-11-30 11:25:38,725 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 5}
+2023-11-30 11:25:38,729 [INFO] test_case_excel.py:148_test_jys:测试不通过
+2023-11-30 11:28:25,170 [INFO] deal_excel.py:23_read_excel:读取所有excel用例完成！！！
+2023-11-30 11:28:25,182 [INFO] conftest.py:24_init:前置函数，交易初始化！
+2023-11-30 11:28:25,182 [INFO] conftest.py:29_init:select t.init_date from ttrd_fix_setflag t
+2023-11-30 11:28:25,423 [INFO] conftest.py:37_init:{'INIT_DATE': '2023-11-30'}
+2023-11-30 11:28:25,431 [INFO] tools.py:95_close_connection:数据库连接关闭！！！
+2023-11-30 11:28:25,431 [INFO] conftest.py:43_init:初始化日期[2023-07-10]等于已初始化日期[2023-07-10]，不允许重复初始化
+2023-11-30 11:28:25,431 [INFO] test_case_excel.py:20_setup_module:setup_module前置函数执行完成，开始执行测试用例！！！
+2023-11-30 11:28:25,435 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 11:28:25,435 [INFO] test_case_excel.py:27_test_jys:(1, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常申报', '上交所协商成交各接口各要素正确，申报成功', 'blocker', 1101, 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"110","sysOrdID":""}', 'select t.ordstatus,t.errinfo from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":5}', None, 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 11:28:25,486 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:28:25,490 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:28:25,490 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:28:25</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701314905</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:28:25</ordTime>
+        <matchNo>110</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:28:25,642 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:28:25,642 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:28:25</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:28:30,683 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus,t.errinfo from ttrd_fix_order t  where t.sysordid=1701314905
+2023-11-30 11:28:30,687 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 2, 'ERRINFO': '1302:约定号重复'}
+2023-11-30 11:28:30,687 [INFO] test_case_excel.py:148_test_jys:测试不通过
+2023-11-30 11:28:31,601 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 11:28:31,605 [INFO] test_case_excel.py:27_test_jys:(2, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常撤单', '上交所协商成交各接口各要素正确，撤单成功', 'critical', '1101;1102', 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml;data/shg_fix/DS_1102_SHG_CD.xml', '{"matchNo":"112","sysOrdID":""};{"orgSysOrdID":""}', 'select t.ordstatus,t.act_status,t.acttype from ttrd_fix_order t where t.sysordid={0};select t.actstatus,t.acttype from ttrd_fix_action t where t.o_sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":9,"ACT_STATUS":"6","ACTTYPE":"W"};{"ACTSTATUS":6,"ACTTYPE":"W"}', None, 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 11:28:31,721 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:28:31,721 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:28:31,721 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:28:31</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701314911</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:28:31</ordTime>
+        <matchNo>112</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:28:31,841 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:28:31,841 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:28:31</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:28:36,844 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:28:36,844 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:28:36,848 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1102</action>
+    <clientID>xIR</clientID>
+    <reqSn>1b6bf9b933204547813ce42127872cbb</reqSn>
+    <sendDateTime>2023-11-30 11:28:36</sendDateTime>
+    <fromIPMAC>172.20.10.30,8C-16-45-9F-36-50</fromIPMAC>
+  </header>
+  <body>
+    <actions>
+    	 <action>
+	        <actDate>2023-11-30</actDate>
+	        <actTime>11:28:36</actTime>
+	        <sysActID />
+	        <actType>W</actType>
+	        <orgOrdDate>2023-11-30</orgOrdDate>
+	        <orgSysOrdID>1701314911</orgSysOrdID>
+	        <extActID />
+	        <userID />
+	        <compID />
+         </action>
+    </actions>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress>127.0.0.1</clientInnerIpAddress>
+      <clientMacaddress>8C16459F3650^C0B6F9E3ABDA^C2B6F9E3ABD9^C0B6F9E3ABD9^00FF818789ED^00FFE575E6DC^00FF1F4140A5</clientMacaddress>
+      <clientHarddiskno>LSL7012818516F02116</clientHarddiskno>
+      <clientPcname>B1221</clientPcname>
+      <clientCpuno>BFEBFBFF000806E9</clientCpuno>
+      <clientDiskpartitioninfo>C^NTFS^119G</clientDiskpartitioninfo>
+      <clientReellabel>000B-1D29</clientReellabel>
+      <clientName>xIRCS</clientName>
+      <clientVersion>1.3.0.075_QUOTE_3</clientVersion>
+      <isTerminalinfo>1</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:28:36,884 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:28:36,884 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1102</action>
+    <clientID>xIR</clientID>
+    <reqSn>1b6bf9b933204547813ce42127872cbb</reqSn>
+    <sendDateTime>2023-11-30 11:28:37</sendDateTime>
+    <fromIPMAC>172.20.10.30,8C-16-45-9F-36-50</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:28:42,129 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus,t.act_status,t.acttype from ttrd_fix_order t where t.sysordid=1701314911
+2023-11-30 11:28:42,133 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 9, 'ACT_STATUS': '6', 'ACTTYPE': 'W'}
+2023-11-30 11:28:42,133 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 11:28:42,173 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 11:28:42,214 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 11:28:42,330 [INFO] test_case_excel.py:131_test_jys:select t.actstatus,t.acttype from ttrd_fix_action t where t.o_sysordid=1701314911
+2023-11-30 11:28:42,338 [INFO] test_case_excel.py:139_test_jys:{'ACTSTATUS': 6, 'ACTTYPE': 'W'}
+2023-11-30 11:28:42,338 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 11:28:42,378 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 11:28:42,438 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 11:28:42,438 [INFO] test_case_excel.py:27_test_jys:(3, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常成交', '上交所协商成交各接口各要素正确，正常成交', 'blocker', '1101;1101', 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml;data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"113","sysOrdID":"","dir":"B","bOrdCount":"120","bOrdPrice":"102.889","sOrdCount":"0","sOrdPrice":"0","trader":"Z31606","obTrader":"Z31608"};{"sysOrdID":"","matchNo":"113","dir":"S","sOrdCount":"120","sOrdPrice":"102.889","bOrdCount":"0","bOrdPrice":"0","trader":"Z31608","obTrader":"Z31606"}', 'select t.ordstatus from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":7}', None, 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 11:28:42,502 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:28:42,502 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:28:42,502 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:28:42</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>B</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701314922</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>120</bOrdCount>
+        <bOrdPrice>102.889</bOrdPrice>
+        <sOrdCount>0</sOrdCount>
+        <sOrdPrice>0</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:28:42</ordTime>
+        <matchNo>113</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31606</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31608</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:28:42,542 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:28:42,542 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:28:42</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:28:47,543 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 11:28:47,543 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 11:28:47,543 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:28:47</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701314927</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>11:28:47</ordTime>
+        <matchNo>113</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 11:28:47,599 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 11:28:47,599 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 11:28:47</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 11:28:53,096 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus from ttrd_fix_order t  where t.sysordid=1701314927
+2023-11-30 11:28:53,100 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 5}
+2023-11-30 11:28:53,104 [INFO] test_case_excel.py:148_test_jys:测试不通过
+2023-11-30 13:38:31,842 [INFO] deal_excel.py:23_read_excel:读取所有excel用例完成！！！
+2023-11-30 13:38:31,866 [INFO] conftest.py:24_init:前置函数，交易初始化！
+2023-11-30 13:38:31,866 [INFO] conftest.py:29_init:select t.init_date from ttrd_fix_setflag t
+2023-11-30 13:38:32,821 [INFO] conftest.py:37_init:{'INIT_DATE': '2023-11-30'}
+2023-11-30 13:38:32,841 [INFO] tools.py:95_close_connection:数据库连接关闭！！！
+2023-11-30 13:38:32,841 [INFO] conftest.py:43_init:初始化日期[2023-07-10]等于已初始化日期[2023-07-10]，不允许重复初始化
+2023-11-30 13:38:32,841 [INFO] test_case_excel.py:20_setup_module:setup_module前置函数执行完成，开始执行测试用例！！！
+2023-11-30 13:38:32,845 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 13:38:32,845 [INFO] test_case_excel.py:27_test_jys:(1, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常申报', '上交所协商成交各接口各要素正确，申报成功', 'blocker', 1101, 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"116","sysOrdID":""}', 'select t.ordstatus,t.errinfo from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":5}', '测试不通过', 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 13:38:32,897 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 13:38:32,897 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 13:38:32,897 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:38:32</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701322712</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>13:38:32</ordTime>
+        <matchNo>116</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 13:38:33,053 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 13:38:33,053 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:38:33</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 13:38:38,164 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus,t.errinfo from ttrd_fix_order t  where t.sysordid=1701322712
+2023-11-30 13:38:38,170 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 5, 'ERRINFO': None}
+2023-11-30 13:38:38,170 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 13:38:39,072 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 13:38:39,072 [INFO] test_case_excel.py:27_test_jys:(2, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常撤单', '上交所协商成交各接口各要素正确，撤单成功', 'critical', '1101;1102', 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml;data/shg_fix/DS_1102_SHG_CD.xml', '{"matchNo":"112","sysOrdID":""};{"orgSysOrdID":""}', 'select t.ordstatus,t.act_status,t.acttype from ttrd_fix_order t where t.sysordid={0};select t.actstatus,t.acttype from ttrd_fix_action t where t.o_sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":9,"ACT_STATUS":"6","ACTTYPE":"W"};{"ACTSTATUS":6,"ACTTYPE":"W"}', '测试通过', 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 13:38:39,121 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 13:38:39,121 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 13:38:39,121 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:38:39</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701322719</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>13:38:39</ordTime>
+        <matchNo>112</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 13:38:39,177 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 13:38:39,177 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:38:39</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 13:38:44,190 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 13:38:44,191 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 13:38:44,192 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1102</action>
+    <clientID>xIR</clientID>
+    <reqSn>1b6bf9b933204547813ce42127872cbb</reqSn>
+    <sendDateTime>2023-11-30 13:38:44</sendDateTime>
+    <fromIPMAC>172.20.10.30,8C-16-45-9F-36-50</fromIPMAC>
+  </header>
+  <body>
+    <actions>
+    	 <action>
+	        <actDate>2023-11-30</actDate>
+	        <actTime>13:38:44</actTime>
+	        <sysActID />
+	        <actType>W</actType>
+	        <orgOrdDate>2023-11-30</orgOrdDate>
+	        <orgSysOrdID>1701322719</orgSysOrdID>
+	        <extActID />
+	        <userID />
+	        <compID />
+         </action>
+    </actions>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress>127.0.0.1</clientInnerIpAddress>
+      <clientMacaddress>8C16459F3650^C0B6F9E3ABDA^C2B6F9E3ABD9^C0B6F9E3ABD9^00FF818789ED^00FFE575E6DC^00FF1F4140A5</clientMacaddress>
+      <clientHarddiskno>LSL7012818516F02116</clientHarddiskno>
+      <clientPcname>B1221</clientPcname>
+      <clientCpuno>BFEBFBFF000806E9</clientCpuno>
+      <clientDiskpartitioninfo>C^NTFS^119G</clientDiskpartitioninfo>
+      <clientReellabel>000B-1D29</clientReellabel>
+      <clientName>xIRCS</clientName>
+      <clientVersion>1.3.0.075_QUOTE_3</clientVersion>
+      <isTerminalinfo>1</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 13:38:44,247 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 13:38:44,247 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1102</action>
+    <clientID>xIR</clientID>
+    <reqSn>1b6bf9b933204547813ce42127872cbb</reqSn>
+    <sendDateTime>2023-11-30 13:38:44</sendDateTime>
+    <fromIPMAC>172.20.10.30,8C-16-45-9F-36-50</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 13:38:49,348 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus,t.act_status,t.acttype from ttrd_fix_order t where t.sysordid=1701322719
+2023-11-30 13:38:49,352 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 9, 'ACT_STATUS': '6', 'ACTTYPE': 'W'}
+2023-11-30 13:38:49,352 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 13:38:49,496 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 13:38:49,496 [INFO] test_case_excel.py:27_test_jys:(3, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常成交', '上交所协商成交各接口各要素正确，正常成交', 'blocker', '1101;1101', 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml;data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"117","sysOrdID":"","dir":"B","bOrdCount":"120","bOrdPrice":"102.889","sOrdCount":"0","sOrdPrice":"0","trader":"Z31606","obTrader":"Z31608"};{"sysOrdID":"","matchNo":"117","dir":"S","sOrdCount":"120","sOrdPrice":"102.889","bOrdCount":"0","bOrdPrice":"0","trader":"Z31608","obTrader":"Z31606"}', 'select t.ordstatus from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":7}', '测试不通过', 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 13:38:49,548 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 13:38:49,552 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 13:38:49,552 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:38:49</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>B</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701322729</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>120</bOrdCount>
+        <bOrdPrice>102.889</bOrdPrice>
+        <sOrdCount>0</sOrdCount>
+        <sOrdPrice>0</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>13:38:49</ordTime>
+        <matchNo>117</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31606</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31608</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 13:38:49,576 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 13:38:49,576 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:38:49</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 13:38:54,579 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 13:38:54,579 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 13:38:54,579 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:38:54</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701322734</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>13:38:54</ordTime>
+        <matchNo>117</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 13:38:54,639 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 13:38:54,639 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:38:54</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 13:38:59,715 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus from ttrd_fix_order t  where t.sysordid=1701322734
+2023-11-30 13:38:59,719 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 5}
+2023-11-30 13:38:59,719 [INFO] test_case_excel.py:148_test_jys:测试不通过
+2023-11-30 13:42:41,930 [INFO] deal_excel.py:23_read_excel:读取所有excel用例完成！！！
+2023-11-30 13:42:41,943 [INFO] conftest.py:24_init:前置函数，交易初始化！
+2023-11-30 13:42:41,943 [INFO] conftest.py:29_init:select t.init_date from ttrd_fix_setflag t
+2023-11-30 13:42:42,766 [INFO] conftest.py:37_init:{'INIT_DATE': '2023-11-30'}
+2023-11-30 13:42:42,790 [INFO] tools.py:95_close_connection:数据库连接关闭！！！
+2023-11-30 13:42:42,790 [INFO] conftest.py:43_init:初始化日期[2023-07-10]等于已初始化日期[2023-07-10]，不允许重复初始化
+2023-11-30 13:42:42,790 [INFO] test_case_excel.py:20_setup_module:setup_module前置函数执行完成，开始执行测试用例！！！
+2023-11-30 13:42:42,794 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 13:42:42,794 [INFO] test_case_excel.py:27_test_jys:(1, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常申报', '上交所协商成交各接口各要素正确，申报成功', 'blocker', 1101, 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"126","sysOrdID":""}', 'select t.ordstatus,t.errinfo from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":5}', '测试不通过', 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 13:42:42,850 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 13:42:42,850 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 13:42:42,850 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:42:42</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701322962</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>13:42:42</ordTime>
+        <matchNo>126</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 13:42:42,978 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 13:42:42,978 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:42:42</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 13:42:48,488 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus,t.errinfo from ttrd_fix_order t  where t.sysordid=1701322962
+2023-11-30 13:42:48,492 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 5, 'ERRINFO': None}
+2023-11-30 13:42:48,492 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 13:42:48,544 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 13:42:48,544 [INFO] test_case_excel.py:27_test_jys:(2, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常撤单', '上交所协商成交各接口各要素正确，撤单成功', 'critical', '1101;1102', 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml;data/shg_fix/DS_1102_SHG_CD.xml', '{"matchNo":"145","sysOrdID":""};{"orgSysOrdID":""}', 'select t.ordstatus,t.act_status,t.acttype from ttrd_fix_order t where t.sysordid={0};select t.actstatus,t.acttype from ttrd_fix_action t where t.o_sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":9,"ACT_STATUS":"6","ACTTYPE":"W"};{"ACTSTATUS":6,"ACTTYPE":"W"}', '测试通过', 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 13:42:48,604 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 13:42:48,604 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 13:42:48,604 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:42:48</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701322968</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>13:42:48</ordTime>
+        <matchNo>145</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 13:42:48,636 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 13:42:48,636 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:42:48</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 13:42:53,756 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 13:42:53,760 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 13:42:53,760 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1102</action>
+    <clientID>xIR</clientID>
+    <reqSn>1b6bf9b933204547813ce42127872cbb</reqSn>
+    <sendDateTime>2023-11-30 13:42:53</sendDateTime>
+    <fromIPMAC>172.20.10.30,8C-16-45-9F-36-50</fromIPMAC>
+  </header>
+  <body>
+    <actions>
+    	 <action>
+	        <actDate>2023-11-30</actDate>
+	        <actTime>13:42:53</actTime>
+	        <sysActID />
+	        <actType>W</actType>
+	        <orgOrdDate>2023-11-30</orgOrdDate>
+	        <orgSysOrdID>1701322968</orgSysOrdID>
+	        <extActID />
+	        <userID />
+	        <compID />
+         </action>
+    </actions>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress>127.0.0.1</clientInnerIpAddress>
+      <clientMacaddress>8C16459F3650^C0B6F9E3ABDA^C2B6F9E3ABD9^C0B6F9E3ABD9^00FF818789ED^00FFE575E6DC^00FF1F4140A5</clientMacaddress>
+      <clientHarddiskno>LSL7012818516F02116</clientHarddiskno>
+      <clientPcname>B1221</clientPcname>
+      <clientCpuno>BFEBFBFF000806E9</clientCpuno>
+      <clientDiskpartitioninfo>C^NTFS^119G</clientDiskpartitioninfo>
+      <clientReellabel>000B-1D29</clientReellabel>
+      <clientName>xIRCS</clientName>
+      <clientVersion>1.3.0.075_QUOTE_3</clientVersion>
+      <isTerminalinfo>1</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 13:42:53,960 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 13:42:53,960 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1102</action>
+    <clientID>xIR</clientID>
+    <reqSn>1b6bf9b933204547813ce42127872cbb</reqSn>
+    <sendDateTime>2023-11-30 13:42:53</sendDateTime>
+    <fromIPMAC>172.20.10.30,8C-16-45-9F-36-50</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 13:42:59,023 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus,t.act_status,t.acttype from ttrd_fix_order t where t.sysordid=1701322968
+2023-11-30 13:42:59,027 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 9, 'ACT_STATUS': '6', 'ACTTYPE': 'W'}
+2023-11-30 13:42:59,027 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 13:42:59,087 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 13:42:59,147 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 13:42:59,263 [INFO] test_case_excel.py:131_test_jys:select t.actstatus,t.acttype from ttrd_fix_action t where t.o_sysordid=1701322968
+2023-11-30 13:42:59,271 [INFO] test_case_excel.py:139_test_jys:{'ACTSTATUS': 6, 'ACTTYPE': 'W'}
+2023-11-30 13:42:59,271 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 13:42:59,331 [INFO] test_case_excel.py:144_test_jys:测试通过
+2023-11-30 13:42:59,407 [INFO] test_case_excel.py:26_test_jys:从excel获取的测试用例数据！！！！
+2023-11-30 13:42:59,411 [INFO] test_case_excel.py:27_test_jys:(3, '协商成交（XSCJ_SHG）_正向用例', '上交所协商成交_正常成交', '上交所协商成交各接口各要素正确，正常成交', 'blocker', '1101;1101', 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml;data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"127","sysOrdID":"","dir":"B","bOrdCount":"120","bOrdPrice":"102.889","sOrdCount":"0","sOrdPrice":"0","trader":"Z31606","obTrader":"Z31608"};{"sysOrdID":"","matchNo":"127","dir":"S","sOrdCount":"120","sOrdPrice":"102.889","bOrdCount":"0","bOrdPrice":"0","trader":"Z31608","obTrader":"Z31606"}', 'select t.ordstatus from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":7}', '测试不通过', 'yes', 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+2023-11-30 13:42:59,487 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 13:42:59,487 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 13:42:59,487 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:42:59</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>B</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701322979</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>120</bOrdCount>
+        <bOrdPrice>102.889</bOrdPrice>
+        <sOrdCount>0</sOrdCount>
+        <sOrdPrice>0</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>13:42:59</ordTime>
+        <matchNo>127</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31606</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31608</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 13:42:59,544 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 13:42:59,544 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:42:59</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 13:43:04,547 [INFO] deal_xml.py:27_set_xml:组装报文完成！
+2023-11-30 13:43:04,547 [INFO] deal_xml.py:41_set_xml_string:读取XML完成！
+2023-11-30 13:43:04,547 [INFO] test_case_excel.py:84_test_jys:<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:43:04</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1701322984</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0</bOrdPrice>
+        <sOrdCount>120</sOrdCount>
+        <sOrdPrice>102.889</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2023-11-30</ordDate>
+        <ordTime>13:43:04</ordTime>
+        <matchNo>127</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+2023-11-30 13:43:04,599 [INFO] tools.py:24_send_post:发送POST请求完成
+2023-11-30 13:43:04,599 [INFO] test_case_excel.py:87_test_jys:(<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2023-11-30 13:43:04</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+2023-11-30 13:43:09,684 [INFO] test_case_excel.py:131_test_jys:select t.ordstatus from ttrd_fix_order t  where t.sysordid=1701322984
+2023-11-30 13:43:09,688 [INFO] test_case_excel.py:139_test_jys:{'ORDSTATUS': 5}
+2023-11-30 13:43:09,692 [INFO] test_case_excel.py:148_test_jys:测试不通过

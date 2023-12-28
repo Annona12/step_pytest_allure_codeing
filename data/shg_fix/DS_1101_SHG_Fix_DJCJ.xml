@@ -1,61 +1,91 @@
-<root>
+     <root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <header>
     <msgType>R</msgType>
     <action>1101</action>
     <clientID>xIR</clientID>
     <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
-    <sendDateTime />
+    <sendDateTime>{{date}}</sendDateTime>
     <fromIPMAC>191.168.0.53,</fromIPMAC>
   </header>
   <body>
     <orders>
       <order>
-        <!--需要唯一或者需要每天修改的日期以及客户端传递的编号 -->
-        <clientOrdid>xir20230222</clientOrdid>
-        <sysOrdID>1688449747</sysOrdID>
-        <ordDate>2023-07-04</ordDate>
-        <ordTime>13:49:07</ordTime>
-        <!--固定不动 -->
+       <ordDate>{{date1}}</ordDate>
+        <ordTime>{{time}}</ordTime>
+        <!--<matchNo>122</matchNo>     约定号-->
         <product>01</product>
         <tradeType>10</tradeType>
-        <orderType>9</orderType>
-        <declareType>6</declareType>
-        <mtype>XSHG</mtype>
-        <exeMarket>XSHG_FIX</exeMarket>
-        <shareProperty>01</shareProperty>
-        <ownerType>103</ownerType>
-        <!--交易要素信息-->
         <company>316</company>
-        <trader>Z31608</trader>
+        <trader>Z31605</trader>
         <seatno>88045</seatno>
+        <!--<obTrader>Z31608</obTrader> 对手方交易员代码-->
         <iceCount>0</iceCount>
-        <accname>lwy_&#22806;&#35777;_B883057982</accname>
-        <secuExtAccid>B883057982</secuExtAccid>
-        <dir>D</dir>
+        <clientOrdid>lwy</clientOrdid>  <!--XIR界面展示的刻划断报价编号-->
+        <accname>lwy_外证_B883056635</accname>
+        <shareProperty>01</shareProperty>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>S</dir>
+        <refId>41</refId>
+        <declareType>7</declareType>
         <iCode>010609</iCode>
         <iName>MDe5+tWuMDY=</iName>
-        <bOrdCount>1000</bOrdCount>
-        <bOrdPrice>101.120</bOrdPrice>
-        <sOrdCount>1000</sOrdCount>
-        <sOrdPrice>102.220</sOrdPrice>
-
+        <mtype>XSHG</mtype>
         <preTradeAnonymity>0</preTradeAnonymity><!--是否匿名报价1-匿名报价，0不匿名报价 -->
-        <orderRestrictions>0</orderRestrictions><!--是否做市报价5，做市报价，0非做市报价-->
-        <settlType>104</settlType>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>0</bOrdCount>
+        <bOrdPrice>0.000</bOrdPrice>
+        <sOrdCount>1000</sOrdCount>
+        <sOrdPrice>100.000</sOrdPrice>
+        <settlType />
         <settlPeriod />
         <lastParPx>0</lastParPx>
         <cashMargin>1</cashMargin>
+        <orderRestrictions>0</orderRestrictions><!--是否做市报价5，做市报价，0非做市报价-->
         <localOrdId>1</localOrdId>
         <memo />
+        <partyGroup>
+          <partyInfo>
+            <partyID>88045</partyID>
+            <partyRole>1</partyRole>
+            <partyIDSource>C</partyIDSource>
+          </partyInfo>
+          <partyInfo>
+            <partyID>B883056635</partyID>
+            <partyRole>5</partyRole>
+            <partyIDSource>5</partyIDSource>
+          </partyInfo>
+          <partyInfo>
+            <partyID>1</partyID>
+            <partyRole>4001</partyRole>
+            <partyIDSource>D</partyIDSource>
+          </partyInfo>
+          <partyInfo>
+            <partyID>316</partyID>
+            <partyRole>7</partyRole>
+            <partyIDSource>C</partyIDSource>
+          </partyInfo>
+          <partyInfo>
+            <partyID>Z31605</partyID>
+            <partyRole>12</partyRole>
+            <partyIDSource>D</partyIDSource>
+          </partyInfo>
+          <partyInfo>
+            <partyID>Z31608</partyID>
+            <partyRole>37</partyRole>
+            <partyIDSource>D</partyIDSource>
+          </partyInfo>
+        </partyGroup>
       </order>
     </orders>
-    <accountInfo>
-      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
-      <cashExtAccName>lwy_&#22806;&#37096;&#36164;&#37329;_&#20132;&#26131;&#25152;</cashExtAccName>
+      <accountInfo>
+      <cashExtAccID>cdy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>cdy_外资_交易所</cashExtAccName>
       <cashAccID>LWY_NBZJ_JYS</cashAccID>
       <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
-      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
-      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <xirSecuExtAccID>cdy_wbzq_sh</xirSecuExtAccID>
+      <xirSecuExtAccName>cdy_外证_上交所_B883056635</xirSecuExtAccName>
       <secuAccID>LWY_NBZQ_JYS</secuAccID>
       <secuAccName>LWY_NBZQ_JYS</secuAccName>
     </accountInfo>
