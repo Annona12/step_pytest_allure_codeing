@@ -1,0 +1,2 @@
+INFO     root:test_case_excel.py:26 从excel获取的测试用例数据！！！！
+INFO     root:test_case_excel.py:27 (20, '确定报价（QDBJ_SHG）_正向用例', '上交所协商成交_正常撤单', '上交所确定报价各接口各要素正确，方向为双边，申报成功', 'blocker', 1101, 'data/shg_fix/DS_1101_SHG_Fix_QDBJ.xml', '{"sysOrdID":""}', 'select t.ordstatus,t.errinfo,t.errcode from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":5}', '测试不通过', 'no', None, 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')

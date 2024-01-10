@@ -3,6 +3,15 @@
 import datetime
 import os
 
+import configparser
+from datetime import timedelta
+import schedule
+import time
+import subprocess
+
+# # 读取配置文件
+# config = configparser.ConfigParser()
+# config.read('config.ini')
 
 def read_shg_fix_file(file_url, file_name):
     file_date = datetime.datetime.now().strftime('%Y%m%d')
@@ -13,6 +22,7 @@ def read_shg_fix_file(file_url, file_name):
         list_length = len(file_list)
         hq_list = []
         hq_dict = {}
+        # hq_list.append(file_list[0])
         for i in range(1, list_length):
             item = file_list[i].replace(' ', '').split('|')
             for i in range(len(item)):
@@ -51,6 +61,22 @@ def read_shg_fix_file(file_url, file_name):
                 elif i == 16:
                     hq_dict['应计利息'] = item[i]
             hq_list.append(hq_dict)
+    print(hq_list)
     return hq_list
 
-print(read_shg_fix_file(r'\\191.168.0.213\test\EzDataAccess\EzDataAccess-Z31606-7086\quot', 'ZQ_QDBJ')[0])
+def run_task():
+    # command = config['Task']['command']
+    try:
+        result = subprocess.run(read_shg_fix_file(r'\\191.168.0.213\test\EzDataAccess\EzDataAccess-Z31606-7086\quot', 'ZQ_QDBJ')
+, shell=True)
+
+        if result.returncode == 0:
+            print("任务执行成功")
+        else:
+            print("任务执行失败")
+
+    except Exception as e:
+        print("任务执行错误:", str(e))
+
+
+# print(read_shg_fix_file(r'\\191.168.0.213\test\EzDataAccess\EzDataAccess-Z31606-7086\quot', 'ZQ_QDBJ'))

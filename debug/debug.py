@@ -1,25 +1,30 @@
-# 开发者：Annona
-# 开发时间：2023/6/6 14:40
+import threading
+import time
 
-# import paramiko
-#
-# # 创建SSH客户端
-# client = paramiko.SSHClient()
-# # 自动添加远程服务器的主机密钥
-# client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-# # 连接远程服务器
-# client.connect('191.168.0.213', username='Administrator', password='5*dr2bTG#B')
-#
-# # 打开远程文件
-# remote_file = client.open('')
-# # 读取文件内容
-# content = remote_file.read()
-# # 输出文件内容
-# print(content)
-# # 关闭远程文件
-# remote_file.close()
-# # 关闭SSH连接
-# client.close()
-import datetime
-import os
+# 自动化测试任务
+def run_test_task():
+    # 执行自动化测试任务的代码
+    print("自动化测试任务开始")
+    time.sleep(5)  # 模拟测试任务的执行时间
+    print("自动化测试任务结束")
 
+# 定时查询行情任务
+def run_query_task():
+    # 执行定时查询行情任务的代码
+    print("定时查询行情任务开始")
+    time.sleep(3)  # 模拟查询任务的执行时间
+    print("定时查询行情任务结束")
+
+# 创建线程
+test_thread = threading.Thread(target=run_test_task)
+query_thread = threading.Thread(target=run_query_task)
+
+# 启动线程
+test_thread.start()
+query_thread.start()
+
+# 等待线程结束
+test_thread.join()
+query_thread.join()
+
+print("所有任务完成")
