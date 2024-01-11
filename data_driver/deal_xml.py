@@ -30,6 +30,7 @@ def set_xml(xml_path, element_dic):
         MY_LOGGER.error('修改XML参数失败:')
         MY_LOGGER.error(str(e))
 
+
 def set_xml_string(xml_path):
     """
     :param xml_path:该参数表示xmlb报文文件的地址

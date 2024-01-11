@@ -24,8 +24,8 @@ def read_excel():
     except Exception as e:
         MY_LOGGER.error(str(e))
     return all_case_list
+
+# 测试代码
 # testcase = read_excel()
 # print(testcase)
-# print(testcase[0])
-# print(len(testcase))
 

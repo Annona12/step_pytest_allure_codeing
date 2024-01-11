@@ -2,7 +2,7 @@
 # 开发时间：2023/6/25 15:46
 # 开发者：Annona
 # 开发时间：2023/6/5 17:01
-from tools.my_logger import  my_logger
+from tools.my_logger import my_logger
 
 # 项目WSDL地址
 URL = 'http://191.168.0.212:8913/FixedIncomeService/services/FixedIncomeService?wsdl'
@@ -29,3 +29,6 @@ ORACLE_PASSWORD = 'xpar'
 # Step程序的上交所固收通道的交易员
 TRADER = 'Z31608'
 OB_TRADER = 'Z31606'
+
+# 上交所确定报价行情文件地址
+QDBJ_URL = r'\\191.168.0.213\test\EzDataAccess\EzDataAccess-Z31606-7086\quot'

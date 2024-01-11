@@ -44,6 +44,7 @@ def init():
     else:
         send_init_request(long_date, local_date)
 
+
 def send_init_request(long_date, local_date):
     MY_LOGGER.info(f"sendDateTime: {long_date}, initDate: {local_date}")
     step_init = 'data/shg_fix/DS_1100_STEP_INIT.xml'
@@ -52,5 +53,3 @@ def send_init_request(long_date, local_date):
     MY_LOGGER.info(data)
     result = tools.send_post(1100, data)
     MY_LOGGER.info(result)
-
-

@@ -8,6 +8,7 @@ import pytest
 
 from constant.constant import *
 from data_driver.deal_excel import read_excel
+from data_driver.deal_shg_fix import get_date_from_cache
 from data_driver.deal_xml import set_xml, set_xml_string
 from tools.tools import Tools
 
@@ -22,6 +23,9 @@ def setup_module(module):
 
 @pytest.mark.parametrize('data',read_excel())
 def test_jys(data):
+    data1 = get_date_from_cache()
+    print(data1)
+    MY_LOGGER.info(data1)
     # 记录日志
     MY_LOGGER.info('从excel获取的测试用例数据！！！！')
     MY_LOGGER.info(data)

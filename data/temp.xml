@@ -5,7 +5,7 @@
     <action>1101</action>
     <clientID>xIR</clientID>
     <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
-    <sendDateTime>2024-01-10 17:43:09</sendDateTime>
+    <sendDateTime>2024-01-11 14:51:58</sendDateTime>
     <fromIPMAC>191.168.0.53,</fromIPMAC>
   </header>
   <body>
@@ -13,9 +13,9 @@
       <order>
         
         <clientOrdid>xir20230222</clientOrdid>
-        <sysOrdID>1704879789</sysOrdID>
-        <ordDate>2024-01-10</ordDate>
-        <ordTime>17:43:09</ordTime>
+        <sysOrdID>1704955918</sysOrdID>
+        <ordDate>2024-01-11</ordDate>
+        <ordTime>14:51:58</ordTime>
         
         <product>01</product>
         <tradeType>10</tradeType>

@@ -1,0 +1,111 @@
+INFO     root:test_case_excel.py:28 [{'time': '2024-01-11 14:46:03|48\n'}]
+INFO     root:test_case_excel.py:30 从excel获取的测试用例数据！！！！
+INFO     root:test_case_excel.py:31 (21, '确定报价（QDBJ_SHG）_正向用例', '上交所协商成交_正常撤单', '上交所确定报价各接口各要素正确，方向为双边，申报成功', 'blocker', 1101, 'data/shg_fix/DS_1101_SHG_Fix_QDBJ.xml', '{"sysOrdID":""}', 'select t.ordstatus,t.errinfo,t.errcode from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":5}', '测试通过', 'yes', None, 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+INFO     root:deal_xml.py:27 组装报文完成！
+INFO     root:deal_xml.py:42 读取XML完成！
+INFO     root:test_case_excel.py:88 <?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2024-01-11 14:51:58</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        
+        <clientOrdid>xir20230222</clientOrdid>
+        <sysOrdID>1704955918</sysOrdID>
+        <ordDate>2024-01-11</ordDate>
+        <ordTime>14:51:58</ordTime>
+        
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <orderType>9</orderType>
+        <declareType>6</declareType>
+        <mtype>XSHG</mtype>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <shareProperty>01</shareProperty>
+        <ownerType>103</ownerType>
+        
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <iceCount>0</iceCount>
+        <accname>lwy_外证_B883057982</accname>
+        <secuExtAccid>B883057982</secuExtAccid>
+        <dir>D</dir>
+        <iCode>010609</iCode>
+        <iName>MDe5+tWuMDY=</iName>
+        <bOrdCount>1000</bOrdCount>
+        <bOrdPrice>101.120</bOrdPrice>
+        <sOrdCount>1000</sOrdCount>
+        <sOrdPrice>102.220</sOrdPrice>
+
+        <preTradeAnonymity>0</preTradeAnonymity>
+        <orderRestrictions>0</orderRestrictions>
+        <settlType>104</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <localOrdId>1</localOrdId>
+        <memo />
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_外部资金_交易所</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+INFO     root:tools.py:24 发送POST请求完成
+INFO     root:test_case_excel.py:91 (<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2024-01-11 14:51:58</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+ERROR    root:run_shg_task.py:21 任务执行成功!
+INFO     root:test_case_excel.py:135 select t.ordstatus,t.errinfo,t.errcode from ttrd_fix_order t  where t.sysordid=1704955918
+INFO     root:test_case_excel.py:143 {'ORDSTATUS': 5, 'ERRINFO': None, 'ERRCODE': 0}
+INFO     root:test_case_excel.py:148 测试通过
