@@ -1,0 +1,107 @@
+INFO     root:test_case_excel.py:28 [{'time': '2024-01-16 09:51:09|1\n'}]
+INFO     root:test_case_excel.py:30 从excel获取的测试用例数据！！！！
+INFO     root:test_case_excel.py:31 (9, '协商成交（XSCJ_SHG）_反向用例_交易方向校验', '上交所协商成交_方向校验', '上交所协商成交除交易方向其他要素正确，交易方向为D', 'blocker', 1101, 'data/shg_fix/DS_1101_SHG_Fix_XSCJ.xml', '{"matchNo":"118","sysOrdID":"","dir":"D","bOrdCount":"100","bOrdPrice":"102","sOrdCount":"100","sOrdPrice":"102.000"}', 'select t.dir,t.ordstatus,t.errinfo,t.S_ORDCOUNT,t.S_ORDPRICE from ttrd_fix_order t  where t.sysordid={0}', 'all_val["sysOrdID"]', '{"ORDSTATUS":5,"DIR":"D","S_ORDCOUNT":100,"S_ORDPRICE":102.0000}', None, 'yes', None, 'data/step_case_shg.xlsx', '上交所固收（XSHG_FIX）')
+INFO     root:deal_xml.py:27 组装报文完成！
+INFO     root:deal_xml.py:42 读取XML完成！
+INFO     root:test_case_excel.py:88 <?xml version='1.0' encoding='utf-8'?>
+<root>
+  <header>
+    <msgType>R</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2024-01-16 09:53:00</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+  </header>
+  <body>
+    <orders>
+      <order>
+        <secuExtAccid>B883056635</secuExtAccid>
+        <orderType>9</orderType>
+        <dir>D</dir>
+        <iCode>010609</iCode>
+        <sysOrdID>1705369980</sysOrdID>
+        <iName>MDe5+tWuMDY=</iName>
+        <exeMarket>XSHG_FIX</exeMarket>
+        <ownerType>103</ownerType>
+        <bOrdCount>100</bOrdCount>
+        <bOrdPrice>102</bOrdPrice>
+        <sOrdCount>100</sOrdCount>
+        <sOrdPrice>102.000</sOrdPrice>
+        <settlType>103</settlType>
+        <settlPeriod />
+        <lastParPx>0</lastParPx>
+        <cashMargin>1</cashMargin>
+        <memo />
+        <ordDate>2024-01-16</ordDate>
+        <ordTime>09:53:00</ordTime>
+        <matchNo>118</matchNo>
+        <product>01</product>
+        <tradeType>10</tradeType>
+        <company>316</company>
+        <trader>Z31608</trader>
+        <seatno>88045</seatno>
+        <obTrader>Z31606</obTrader>
+        <iceCount>0</iceCount>
+        <clientOrdid>lwy111</clientOrdid>
+        <accname>lwy_shg_B883056635</accname>
+        <shareProperty>01</shareProperty>
+      </order>
+    </orders>
+    <accountInfo>
+      <cashExtAccID>lwy_wbzj_jys</cashExtAccID>
+      <cashExtAccName>lwy_shg_001</cashExtAccName>
+      <cashAccID>LWY_NBZJ_JYS</cashAccID>
+      <cashAccIDAccName>LWY_NBZJ_JYS</cashAccIDAccName>
+      <xirSecuExtAccID>lwy_wbzq_sh_02</xirSecuExtAccID>
+      <xirSecuExtAccName>lwy_wbzq_sh_02</xirSecuExtAccName>
+      <secuAccID>LWY_NBZQ_JYS</secuAccID>
+      <secuAccName>LWY_NBZQ_JYS</secuAccName>
+    </accountInfo>
+    <terminalInfo>
+      <clientPublicIpAddress />
+      <clientPublicPort />
+      <clientInnerIpAddress />
+      <clientMacaddress />
+      <clientHarddiskno />
+      <clientPcname />
+      <clientCpuno />
+      <clientDiskpartitioninfo />
+      <clientReellabel />
+      <clientName>xIRCS</clientName>
+      <clientVersion />
+      <isTerminalinfo>0</isTerminalinfo>
+    </terminalInfo>
+  </body>
+</root>
+INFO     root:tools.py:24 发送POST请求完成
+INFO     root:test_case_excel.py:93 (<HTTPStatus.OK: 200>, <?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <header>
+    <msgType>A</msgType>
+    <action>1101</action>
+    <clientID>xIR</clientID>
+    <reqSn>7897b7e19186472f823bad3d04ec9799</reqSn>
+    <sendDateTime>2024-01-16 09:53:00</sendDateTime>
+    <fromIPMAC>191.168.0.53,</fromIPMAC>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+    <massageIndex>0</massageIndex>
+  </header>
+  <body>
+    <reqID>0</reqID>
+    <reqRefID>0</reqRefID>
+    <extReqID></extReqID>
+    <extReqRefID></extReqRefID>
+    <reqStatus>0</reqStatus>
+    <errorCode>0</errorCode>
+    <errorInfo></errorInfo>
+  </body>
+</root>)
+ERROR    root:run_shg_task.py:21 任务执行成功!
+INFO     root:test_case_excel.py:137 select t.dir,t.ordstatus,t.errinfo,t.S_ORDCOUNT,t.S_ORDPRICE from ttrd_fix_order t  where t.sysordid=1705369980
+INFO     root:test_case_excel.py:145 {'DIR': 'D', 'ORDSTATUS': 5, 'ERRINFO': None, 'S_ORDCOUNT': 100, 'S_ORDPRICE': 102.0}
+INFO     root:test_case_excel.py:150 测试通过
+INFO     root:test_case_excel.py:150 测试通过
+INFO     root:test_case_excel.py:150 测试通过
+INFO     root:test_case_excel.py:150 测试通过

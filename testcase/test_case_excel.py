@@ -86,6 +86,8 @@ def test_jys(data):
                 set_xml(xml_list[i], param_list_i)
                 data_xml = set_xml_string('data/temp.xml')
                 MY_LOGGER.info(data_xml)
+                data1=get_date_from_cache()
+                print('data1：',data1)
                 # 发送请求
                 result = tools.send_post(act_list[i], data_xml)
                 MY_LOGGER.info(result)
