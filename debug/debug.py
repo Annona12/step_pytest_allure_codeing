@@ -7,7 +7,7 @@ def thread_a_main(sync_data_pool):  # A 进程主函数，存入100+的数
     for ix in range(100, 105):
         sleep(1)
         sync_data_pool.append(ix)
-
+#///
 
 def thread_b_main(sync_data_pool):  # B 进程主函数，存入300+的数
     for ix in range(300, 309):
